@@ -1,0 +1,16 @@
+{
+      "books": [
+        {
+          "id": 1,
+          "title": "Harry Potter and the Chamber of Secrets",
+          "author": "J.K Rowling",
+          "category": "fantasy"
+        },
+        {
+          "id": 2,
+          "title": "The Notebook",
+          "author": "Nicholas Sparks",
+          "category": "Romance"
+        }
+      ]
+    }
