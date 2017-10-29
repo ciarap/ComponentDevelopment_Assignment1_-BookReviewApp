@@ -46,7 +46,13 @@ componentDidMount() {
 
     render() {
         return (
-            <div>
+            <div >
+                <h1>Books List</h1>
+                <BookList list={localCache.getAll()} />
+                <h1>Books List</h1>
+                <BookList list={localCache.getAll()} />
+                <h1>Books List</h1>
+                <BookList list={localCache.getAll()} />
                 <h1>Books List</h1>
                 <BookList list={localCache.getAll()} />
             </div>
