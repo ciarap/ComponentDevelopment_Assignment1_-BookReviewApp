@@ -83,6 +83,12 @@ body{
 
 }
 
+@media (max-width: 768px){
+  body{
+padding-top: 10em;
+  }
+}
+
 .bodyText{
 	padding: 20px;
 	margin-top:40px;
@@ -118,3 +124,40 @@ body{
 margin-top:40px;
 }
 }
+
+
+ .books {
+      list-style: none;
+    }
+
+.thumbnail > img{
+  margin-right:1.5em;
+  margin-left:0.5em;
+}
+    .thumb {
+      float: left;
+      padding-bottom: 1em;
+      width: 80px;
+    }
+
+    .books li {
+      clear: both;
+      height: 160px;
+      width: 70%;
+      padding-top: 15px;
+    }
+
+    .booksBlock {
+  height: 100%;
+  background-image: url(./background.jpg);
+  background-position: center top;
+  background-size: 100%; 
+}
+
+.WhitePageTitle{
+  color: #FFFFFF;
+  font-size:60px;
+  padding: 0.5em;
+  text-align: center;
+}
+

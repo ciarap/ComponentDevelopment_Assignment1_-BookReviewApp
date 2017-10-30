@@ -4,13 +4,36 @@
           "id": 1,
           "title": "Harry Potter and the Chamber of Secrets",
           "author": "J.K Rowling",
+	  "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
           "category": "fantasy"
         },
         {
           "id": 2,
           "title": "The Notebook",
           "author": "Nicholas Sparks",
+          "imageUrl": "./img/notebook.jpg",
           "category": "Romance"
+        },
+         {
+          "id": 3,
+          "title": "The Passenger",
+          "author": "Lisa Lutz",
+          "imageUrl": "./img/passenger.jpg",
+          "category": "Thriller"
+        },
+         {
+          "id": 4,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "imageUrl": "./img/ToKillAMockingbird.gif",
+          "category": "Drama"
+        },
+         {
+          "id": 5,
+          "title": "The Book Thief",
+          "author": "Markus Zusak ",
+          "imageUrl": "./img/BookThief.jpg",
+          "category": "Drama"
         }
       ]
     }
