@@ -34,6 +34,13 @@
           "author": "Markus Zusak ",
           "imageUrl": "./img/BookThief.jpg",
           "category": "Drama"
+        },
+        {
+          "id": 6,
+          "title": "Animal Farm",
+          "author": "George Orwell ",
+          "imageUrl": "./img/AnimalFarm.jpg",
+          "category": "Allegorical"
         }
       ]
     }

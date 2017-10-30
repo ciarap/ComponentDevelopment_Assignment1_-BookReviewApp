@@ -10,7 +10,7 @@ class Homepage extends React.Component{
         return (
             <div >
             <img className=" center-block img-rounded img-responsive" src=".././img/header_AllBooks.jpg" alt="Books Homepage"/>
-                <h1>Homepage</h1>
+             <h1>Homepage</h1>
             </div>
         );
     }
