@@ -6,6 +6,7 @@ import React from 'react';
     import {Navbar, Nav, NavItem, Brand} from 'react-bootstrap';
     import Homepage from './App';
     import AllBooks from './AllBooks';
+    import BookDetail from './BookDetail';
 
 
 
@@ -47,6 +48,7 @@ var App = React.createClass({
                 <Route path="/" component={App}>
                 <IndexRoute component={Homepage}/>
                 <Route path ="/AllBooks" component={AllBooks}/>
+                <Route path="books/:id" component={BookDetail} />
                 </Route>
               </Router>
             ,

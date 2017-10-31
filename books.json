@@ -1,42 +1,42 @@
 {
       "books": [
         {
-          "id": 1,
+          "id": "harry-potter-and-the-chamber-of-secrets",
           "title": "Harry Potter and the Chamber of Secrets",
           "author": "J.K Rowling",
-	  "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
+	        "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
           "category": "Fantasy"
         },
         {
-          "id": 2,
+          "id": "the-notebook",
           "title": "The Notebook",
           "author": "Nicholas Sparks",
           "imageUrl": "./img/notebook.jpg",
           "category": "Romance"
         },
          {
-          "id": 3,
+          "id": "the-passenger",
           "title": "The Passenger",
           "author": "Lisa Lutz",
           "imageUrl": "./img/passenger.jpg",
           "category": "Thriller"
         },
          {
-          "id": 4,
+          "id": "to-kill-a-mockingbird",
           "title": "To Kill a Mockingbird",
           "author": "Harper Lee",
           "imageUrl": "./img/ToKillAMockingbird.gif",
           "category": "Drama"
         },
          {
-          "id": 5,
+          "id": "the-book-thief",
           "title": "The Book Thief",
           "author": "Markus Zusak ",
           "imageUrl": "./img/BookThief.jpg",
           "category": "Drama"
         },
         {
-          "id": 6,
+          "id": "animal-farm",
           "title": "Animal Farm",
           "author": "George Orwell ",
           "imageUrl": "./img/AnimalFarm.jpg",

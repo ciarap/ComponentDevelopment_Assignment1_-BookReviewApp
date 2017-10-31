@@ -1,6 +1,7 @@
 import React from 'react';
 import localCache from './localCache';
 import _ from 'lodash';
+ import { Link } from 'react-router'; 
 
 var request = require('superagent') ;
 
@@ -47,7 +48,7 @@ class BookListItem extends React.Component {
         return (
             <li className="thumbnail book-listing">
             <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
-                <h3>{this.props.book.title}</h3> 
+                 <Link to={'/books/' + this.props.book.id}><h3>{this.props.book.title}</h3></Link>
                 <h4> Author: {this.props.book.author}</h4>
                 <h4> Category: {this.props.book.category}</h4>
             </li>
