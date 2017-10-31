@@ -161,3 +161,27 @@ margin-top:40px;
   text-align: center;
 }
 
+@media (min-width: 768px){
+.searchSortBar{
+  background: linear-gradient(#ac00e6, #660066, #6600ff); /* Standard syntax */
+  margin: 2em;
+  padding:1.5em;
+  padding-left: 6em;
+  min-height: 5em;
+}
+}
+
+@media (max-width: 768px){
+.searchSortBar{
+ background: linear-gradient(#ac00e6, #660066, #6600ff); /* Standard syntax */
+  margin: 2em;
+  padding:1.5em;
+  min-height: 3em;
+}
+}
+.searchSortBar p{
+  color: #FFFFFF;
+  font-size: 20px;
+display: inline-block;
+}
+

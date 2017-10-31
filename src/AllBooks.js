@@ -20,16 +20,22 @@ class SelectBox extends React.Component {
 
     render() {
         return (
-            <div className="col-md-10">
+            <div className="searchSortBar">
+            <div className="col-md-4">
                 <input type="text" placeholder="Search" 
                     value={this.props.filterText}
                     onChange={this.handleTextChange} />
-         Sort by:
+            </div>
+            <div className="col-md-4">
+                <p>Sort by: &emsp; </p>
                 <select id="sort" value={this.props.order } 
                     onChange={this.handleSortChange} >
                     <option value="title">Alphabetical</option>
                     <option value="age">Newest</option>
+                    <option value="author">Author</option>
+                    <option value="category">Category</option>
                 </select>
+                </div>
             </div>
         );
     }
