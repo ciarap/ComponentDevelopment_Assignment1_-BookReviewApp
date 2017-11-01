@@ -32,7 +32,7 @@ class SelectBox extends React.Component {
                 <select id="sort" value={this.props.order } 
                     onChange={this.handleSortChange} >
                     <option value="title">Alphabetical</option>
-                    <option value="age">Newest</option>
+                    <option value="date">Oldest First</option>
                     <option value="author">Author</option>
                     <option value="category">Category</option>
                 </select>
@@ -47,13 +47,19 @@ class BookListItem extends React.Component {
     render() {
         return (
             <li className="thumbnail book-listing">
+            <div className="col-md-2">
              <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
             <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
-                <h3>{this.props.book.title}</h3>
+                 </Link>
+                 </div>
+                  <div className="col-md-8">
+                   <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
+                 <h3>{this.props.book.title}</h3>
                  </Link>
                 <h4> Author: {this.props.book.author}</h4>
                 <h4> Category: {this.props.book.category}</h4>
-
+                 <h4> Publish Date: {this.props.book.date}</h4>
+</div>
             </li>
         );
     }

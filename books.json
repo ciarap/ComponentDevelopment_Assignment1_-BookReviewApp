@@ -6,7 +6,8 @@
           "author": "J.K Rowling",
           "authorId":"jk-rowling",
 	        "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
-          "category": "Fantasy"
+          "category": "Fantasy",
+          "date":1998
         },
         {
           "id": "the-notebook",
@@ -14,7 +15,8 @@
           "author": "Nicholas Sparks",
           "authorId":"nicholas-sparks",
           "imageUrl": "./img/notebook.jpg",
-          "category": "Romance"
+          "category": "Romance",
+          "date":1996
         },
          {
           "id": "the-passenger",
@@ -22,7 +24,8 @@
           "author": "Lisa Lutz",
           "authorId":"lisa-lutz",
           "imageUrl": "./img/passenger.jpg",
-          "category": "Thriller"
+          "category": "Thriller",
+          "date":2016
         },
          {
           "id": "to-kill-a-mockingbird",
@@ -30,7 +33,8 @@
           "author": "Harper Lee",
           "authorId":"harper-lee",
           "imageUrl": "./img/ToKillAMockingbird.gif",
-          "category": "Drama"
+          "category": "Drama",
+          "date":1960
         },
          {
           "id": "the-book-thief",
@@ -38,7 +42,8 @@
           "author": "Markus Zusak ",
           "authorId":"markus-zusak",
           "imageUrl": "./img/BookThief.jpg",
-          "category": "Drama"
+          "category": "Drama",
+          "date": 2005
         },
         {
           "id": "animal-farm",
@@ -46,7 +51,8 @@
           "author": "George Orwell ",
           "authorId":"george-orwell",
           "imageUrl": "./img/AnimalFarm.jpg",
-          "category": "Allegorical"
+          "category": "Allegorical",
+          "date": 1945
         }
       ]
     }

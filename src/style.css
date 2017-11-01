@@ -130,19 +130,15 @@ margin-top:40px;
       list-style: none;
     }
 
-.thumbnail > img{
-  margin-right:1.5em;
-  margin-left:0.5em;
-}
     .thumb {
       float: left;
       padding-bottom: 1em;
-      width: 80px;
+      width: 95px;
     }
 
     .books li {
       clear: both;
-      height: 160px;
+      height: 180px;
       width: 70%;
       padding-top: 15px;
     }
