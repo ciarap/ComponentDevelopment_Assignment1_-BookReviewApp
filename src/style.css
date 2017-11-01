@@ -147,6 +147,14 @@ margin-top:40px;
       padding-top: 15px;
     }
 
+.link{
+color: #000000;
+}
+
+.link:hover{
+  color: #AE5BEE;
+text-decoration: none;
+}
     .booksBlock {
   height: 100%;
   background-image: url(./background.jpg);
@@ -192,3 +200,36 @@ margin-top:40px;
 display: inline-block;
 }
 
+.back-arrow{
+  width: 70px;
+}
+
+ img.book {
+      float: left;
+      border: 1px solid black;
+      margin-right: 3em;
+      margin-bottom: 2em;
+      background: linear-gradient(#ac00e6, #660066, #6600ff); 
+      padding: 2em;
+      height: 400px;
+      width: 400px;
+    }
+
+    .author,.about{
+      float: left;
+      border: 1px solid black;
+      margin-left:2em;
+      margin-bottom: 2em;
+      background-color: #FFFFFF; 
+      padding: 2em;
+    }
+
+.book-images,
+.author-images{
+  margin-left:2em;
+}
+    img.author{
+      float: left;
+      height: 200px;
+      width: 200px;
+    }

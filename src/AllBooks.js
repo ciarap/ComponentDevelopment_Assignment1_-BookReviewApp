@@ -47,10 +47,13 @@ class BookListItem extends React.Component {
     render() {
         return (
             <li className="thumbnail book-listing">
+             <Link className="link" to={'/AllBooks/' + this.props.book.id}>
             <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
-                 <Link to={'/books/' + this.props.book.id}><h3>{this.props.book.title}</h3></Link>
+                <h3>{this.props.book.title}</h3>
+                 </Link>
                 <h4> Author: {this.props.book.author}</h4>
                 <h4> Category: {this.props.book.category}</h4>
+
             </li>
         );
     }

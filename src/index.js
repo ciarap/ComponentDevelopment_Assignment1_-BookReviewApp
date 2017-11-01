@@ -48,7 +48,7 @@ var App = React.createClass({
                 <Route path="/" component={App}>
                 <IndexRoute component={Homepage}/>
                 <Route path ="/AllBooks" component={AllBooks}/>
-                <Route path="books/:id" component={BookDetail} />
+                <Route path="AllBooks/:id" component={BookDetail} />
                 </Route>
               </Router>
             ,
