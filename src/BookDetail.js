@@ -1,6 +1,7 @@
  import React from 'react';
     import localCache from './localCache';
     import BookCache from './BookCache';
+    import AuthorCache from './AuthorCache';
     import request from 'superagent' ; 
      import { Link } from 'react-router'; 
    
@@ -9,7 +10,7 @@
       render(){
           var mainImage = (
             <div className="book-images">
-              <img src={"../"+this.props.book.imageUrl}  
+              <img src={"/"+this.props.book.imageUrl}  
                     alt={this.props.book.title}  className="book"/>
             </div>
             ) ;
@@ -31,16 +32,24 @@
       render(){
           var mainImage = (
             <div className="author-images">
-              <img src={"../"+this.props.book.authorImageUrl}  
-                    alt={this.props.book.author}  className="author"/>
+              <img src={"/"+this.props.author.imageUrl}  
+                    alt={this.props.author.name}  className="author"/>
             </div>
             ) ;
             return (
-                   <div className="author">
-                   <h1>Author</h1>
+                   <div className="authorAbout">
+                   <div className="row">
+                   <div className="col-md-3">
                    {mainImage}
-                    <p> {this.props.book.author}</p>
-                    
+                   </div>
+                   <div className="col-md-9 ">
+                   <h1 >Author</h1>
+                   <a className="link" href={this.props.author.url}>
+                   <h3>{this.props.author.name}</h3>
+                   </a>
+                    <p> {this.props.author.info}</p>
+                    </div>
+                    </div>
                   </div>
                   );
           }
@@ -58,17 +67,34 @@
                 BookCache.setBook(json);
                 this.setState({});
            }) ;
+
+ request.get(
+            '/authors/' + this.props.params.authorId + '.json', (err, res) => {
+                let json = JSON.parse(res.text);
+                AuthorCache.setAuthor(json);
+                 this.setState({});
+           }) ;
       } 
       render(){
-          let display = <p>No book details + {this.props.params.id}</p> ; 
+
+          let bookDisplay = <p>No book details + {this.props.params.id}</p> ; 
           let book= BookCache.getBook();
+
+          let authorDisplay = <p>No author details + {this.props.params.authorId}</p> ; 
+          let author=AuthorCache.getAuthor();
+
+         if(author){
+            authorDisplay = (
+            <AuthorSection author={author}  />
+              )
+          }
           if (book) {
-              display =  (
+              bookDisplay =  (
                 <div>
                     <div className="row">
                       <div className="col-md-1">
                        <Link className="link" to={'/AllBooks/'}> 
-                       <img className="img-responsive back-arrow" src=".././img/back_arrow.png" alt="Back Arrow" />
+                       <img className="img-responsive back-arrow" src="/img/back_arrow.png" alt="Back Arrow" />
                         <figcaption>  Go Back  </figcaption>
                         </Link> 
                         </div>
@@ -77,13 +103,13 @@
                     </div>
                     </div>
                     <BookSection book={book} />
-                    <AuthorSection book={book} />
+                    {authorDisplay}
                     </div>
                     ) ;
           }
           return (
             <div>
-              {display}
+              {bookDisplay}
             </div>
             );
       }

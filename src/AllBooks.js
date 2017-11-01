@@ -47,7 +47,7 @@ class BookListItem extends React.Component {
     render() {
         return (
             <li className="thumbnail book-listing">
-             <Link className="link" to={'/AllBooks/' + this.props.book.id}>
+             <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
             <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
                 <h3>{this.props.book.title}</h3>
                  </Link>
@@ -60,20 +60,6 @@ class BookListItem extends React.Component {
 }
 
 
-class BookList extends React.Component {
-    render() {
-        var items = this.props.list.map(function(item) {
-            return <BookListItem key={item.title} book={item} />;
-        });
-        return (
-         <div >
-            <ul className="books">
-                {items}
-            </ul>
-            </div>
-        );
-    }
-}
 class FilteredBookList extends React.Component {
       render() {
           var displayedBooks = this.props.books.map(function(book) {

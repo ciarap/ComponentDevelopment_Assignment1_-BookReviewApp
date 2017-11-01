@@ -3,7 +3,7 @@ import React from 'react';
     import '../node_modules/bootstrap/dist/css/bootstrap.css';
     import '../src/style.css';
     import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-    import {Navbar, Nav, NavItem, Brand} from 'react-bootstrap';
+    import {Navbar, Nav, NavItem} from 'react-bootstrap';
     import Homepage from './App';
     import AllBooks from './AllBooks';
     import BookDetail from './BookDetail';
@@ -16,7 +16,7 @@ var NavigationBar = React.createClass({
   render() {
     return (
       <Navbar className="navbar-fixed-top" >
-      <div className= "navbar-brand"> <a data-toggle="tooltip" title="Homepage" href="/"><img src="/bookIcon.png"/> BookShelf </a></div>
+      <div className= "navbar-brand"> <a data-toggle="tooltip" title="Homepage" href="/"><img src="/bookIcon.png" alt="Book Icon"/> BookShelf </a></div>
       <Nav  className="navbar-right ">
     <NavItem  className="navItem " href="/AllBooks">All Books</NavItem>
      <NavItem className="navItem" href="#">All Reviews</NavItem>
@@ -48,7 +48,7 @@ var App = React.createClass({
                 <Route path="/" component={App}>
                 <IndexRoute component={Homepage}/>
                 <Route path ="/AllBooks" component={AllBooks}/>
-                <Route path="AllBooks/:id" component={BookDetail} />
+                <Route path="AllBooks/:id/:authorId" component={BookDetail} />
                 </Route>
               </Router>
             ,
