@@ -1,5 +1,4 @@
  import React from 'react';
-    import localCache from './localCache';
     import BookCache from './BookCache';
     import AuthorCache from './AuthorCache';
     import request from 'superagent' ; 
@@ -61,19 +60,28 @@
       state = { };
 
        componentDidMount() {
-            request.get(
-             '/bookDetails/' + this.props.params.id + '.json', (err, res) => {
-                let json = JSON.parse(res.text);
-                BookCache.setBook(json);
-                this.setState({});
-           }) ;
 
- request.get(
-            '/authors/' + this.props.params.authorId + '.json', (err, res) => {
-                let json = JSON.parse(res.text);
-                AuthorCache.setAuthor(json);
-                 this.setState({});
-           }) ;
+        request.get('http://localhost:3000/books/'+this.props.params.id)
+            .end(function(error, res){
+                if (res) {
+                    var book = JSON.parse(res.text);
+                    BookCache.setBook(book);
+                    this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+
+ request.get('http://localhost:3000/authors/'+this.props.params.authorId)
+            .end(function(error, res){
+                if (res) {
+                    var author = JSON.parse(res.text);
+                    AuthorCache.setAuthor(author);
+                    this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
       } 
       render(){
 

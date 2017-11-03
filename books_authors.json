@@ -1,0 +1,117 @@
+{
+      
+      "authors": [
+        {
+          "id":"george-orwell",
+       "name": "George Orwell ",
+    "imageUrl": "./img/george-orwell.jpg",
+    "info":"Eric Arthur Blair (25 June 1903 – 21 January 1950),better known by his pen name George Orwell, was an English novelist, essayist, journalist, and critic. His work is marked by lucid prose, awareness of social injustice, opposition to totalitarianism, and outspoken support of democratic socialism.Orwell wrote literary criticism, poetry, fiction, and polemical journalism. He is best known for the allegorical novella Animal Farm (1945) and the dystopian novel Nineteen Eighty-Four (1949). His non-fiction works, including The Road to Wigan Pier (1937), documenting his experience of working class life in the north of England, and Homage to Catalonia (1938), an account of his experiences in the Spanish Civil War, are widely acclaimed, as are his essays on politics, literature, language, and culture. In 2008, The Times ranked him second on a list of \"The 50 greatest British writers since 1945\".Orwell's work continues to influence popular and political culture, and the term Orwellian – descriptive of totalitarian or authoritarian social practices – has entered the language together with many of his neologisms, including Big Brother, Thought Police, Room 101, memory hole, newspeak, doublethink, proles, unperson, and thoughtcrime.",
+    "url":"https://en.wikipedia.org/wiki/George_Orwell"
+        },
+        {
+          "id":"harper-lee",
+           "imageUrl":"./img/harper-lee.jpg",
+   "name":"Harper Lee",
+     "url":"https://en.wikipedia.org/wiki/Harper_Lee",
+     "info":"Nelle Harper Lee (April 28, 1926 – February 19, 2016), better known by her pen name Harper Lee, was an American novelist widely known for To Kill a Mockingbird, published in 1960. Immediately successful, it won the 1961 Pulitzer Prize and has become a classic of modern American literature. Though Lee had only published this single book, in 2007 she was awarded the Presidential Medal of Freedom for her contribution to literature. Additionally, Lee received numerous honorary degrees, though she declined to speak on those occasions. She was also known for assisting her close friend Truman Capote in his research for the book In Cold Blood (1966). Capote was the basis for the character Dill in To Kill a Mockingbird.The plot and characters of To Kill a Mockingbird are loosely based on Lee's observations of her family and neighbors, as well as an event that occurred near her hometown in 1936, when she was 10 years old. The novel deals with the irrationality of adult attitudes towards race and class in the Deep South of the 1930s, as depicted through the eyes of two children. The novel was inspired by racist attitudes in her hometown of Monroeville, Alabama.Another novel, Go Set a Watchman, was written in the mid-1950s and published in July 2015 as a \"sequel\", though it was later confirmed to be To Kill a Mockingbird's first draft."
+
+        },
+         {
+          "id":"jk-rowling",
+          "name": "J.K Rowling",
+  "imageUrl":"./img/jk-rowling.jpg",
+  "url":"https://en.wikipedia.org/wiki/J._K._Rowling",
+  "info":"Joanne Rowling, ( born 31 July 1965), who writes under the pen names J. K. Rowling and Robert Galbraith, is a British novelist and screenwriter who wrote the Harry Potter fantasy series. The books have won multiple awards, and sold more than 400 million copies. They have become the best-selling book series in history and been the basis for a series of films, over which Rowling had overall approval on the scripts and was a producer on the final films in the series.Born in Yate, Gloucestershire, England, Rowling was working as a researcher and bilingual secretary for Amnesty International when she conceived the idea for the Harry Potter series while on a delayed train from Manchester to London in 1990. The seven-year period that followed saw the death of her mother, birth of her first child, divorce from her first husband and relative poverty until the first novel in the series, Harry Potter and the Philosopher's Stone, was published in 1997. There were six sequels, of which the last, Harry Potter and the Deathly Hallows, was released in 2007. Since then, Rowling has written four books for adult readers: The Casual Vacancy (2012) and—under the pseudonym Robert Galbraith—the crime fiction novels The Cuckoo's Calling (2013), The Silkworm (2014) and Career of Evil (2015).Rowling has lived a \"rags to riches\" life story, in which she progressed from living on state benefits to multi-millionaire status within five years. She is the United Kingdom's best-selling living author, with sales in excess of £238M. The 2016 Sunday Times Rich List estimated Rowling's fortune at £600 million, ranking her as the joint 197th richest person in the UK. Time magazine named her as a runner-up for its 2007 Person of the Year, noting the social, moral, and political inspiration she has given her fans. In October 2010, Rowling was named the \"Most Influential Woman in Britain\" by leading magazine editors. She has supported charities including Comic Relief, One Parent Families, Multiple Sclerosis Society of Great Britain and Lumos."
+
+        },
+         {
+          "id":"lisa-lutz",
+            "imageUrl":"./img/lisa-lutz.jpg",
+  "name":"Lisa Lutz",
+  "url":"https://en.wikipedia.org/wiki/Lisa_Lutz",
+  "info":"Lisa Lutz is an American author. She began her career writing screenplays for Hollywood. One of her rejected screenplays became the basis for a popular series of novels about a family of private investigators, the Spellmans."
+
+        },
+         {
+          "id":"markus-zusak",
+        "name":"Markus Zusak",
+  "url":"https://en.wikipedia.org/wiki/Markus_Zusak",
+  "imageUrl":"./img/markus-zusak.jpg",
+  "info":"Markus Frank Zusak (born 23 June 1975) is an Australian writer. He is best known for The Book Thief and The Messenger (US title, I Am the Messenger), two novels for young adults which have been international best-sellers. He won the annual Margaret A. Edwards Award in 2014 for his contributions to young-adult literature published in the US."
+
+        },
+        {
+          "id":"nicholas-sparks",
+         "imageUrl":"./img/nicholas-sparks.jpg",
+"name":"Nicholas Sparks",
+"url":"https://en.wikipedia.org/wiki/Nicholas_Sparks",
+"info":"Nicholas Charles Sparks (born December 31, 1965) is an American romance novelist, screenwriter and producer. He has published eighteen novels and two non-fiction books. Several of his novels have become international bestsellers, and eleven of his romantic-drama novels have been adapted to film all with multimillion-dollar box office grosses.Sparks was born in Omaha, Nebraska and wrote his first novel, The Passing, in 1985, while a student at the University of Notre Dame. His first published work came in 1990, when he co-wrote with Billy Mills Wokini: A Lakota Journey to Happiness and Self-Understanding, which sold approximated 50,000 copies in its first year. In 1993, Sparks wrote his breakthrough novel The Notebook in his spare time while selling pharmaceuticals in Washington, D.C.. Two years later, his novel was discovered by literary agent Theresa Park who offered to represent him. The novel was published in October 1996 and made the New York Times best-seller list in its first week of release."
+  }
+      ],
+
+
+"books": [
+        {
+          "id": "harry-potter-and-the-chamber-of-secrets",
+          "title": "Harry Potter and the Chamber of Secrets",
+          "author": "J.K Rowling",
+          "authorId":"jk-rowling",
+	        "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
+          "category": "Fantasy",
+          "date":1998,
+          "blurb":"The Dursleys were so mean that hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike. And strike it does. For in Harry's second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockheart, a spirit named Moaning Myrtle who haunts the girls' bathroom, and the unwanted attentions of Ron Weasley's younger sister, Ginny. But each of these seem minor annoyances when the real trouble begins, and someone--or something--starts turning Hogwarts students to stone. Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects...Harry Potter himself?"
+        },
+        {
+          "id": "the-notebook",
+          "title": "The Notebook",
+          "author": "Nicholas Sparks",
+          "authorId":"nicholas-sparks",
+          "imageUrl": "./img/notebook.jpg",
+          "category": "Romance",
+          "blurb":"Every so often a love story so captures our hearts that it becomes more than a story-it becomes an experience to remember forever. The Notebook is such a book. It is a celebration of how passion can be ageless and timeless, a tale that moves us to laughter and tears and makes us believe in true love all over again... ...At thirty-one, Noah Calhoun, back in coastal North Carolina after World War II, is haunted by images of the girl he lost more than a decade earlier. At twenty-nine, socialite Allie Nelson is about to marry a wealthy lawyer, but she cannot stop thinking about the boy who long ago stole her heart. Thus begins the story of a love so enduring and deep it can turn tragedy into triumph, and may even have the power to create a miracle...",
+          "date":1996
+        },
+         {
+          "id": "the-passenger",
+          "title": "The Passenger",
+          "author": "Lisa Lutz",
+          "authorId":"lisa-lutz",
+          "imageUrl": "./img/passenger.jpg",
+          "category": "Thriller",
+          "date":2016,
+          "blurb":"“A dead-serious thriller (with a funny bone)” (The New York Times Book Review), from the author of the New York Times bestselling Spellman Files series, comes the story of a woman who creates and sheds new identities as she crisscrosses the country to escape her past. Forty-eight hours after leaving her husband’s body at the base of the stairs, Tanya Dubois cashes in her credit cards, dyes her hair brown, demands a new name from a shadowy voice over the phone, and flees town. It’s not the first time. She meets Blue, a female bartender who recognizes the hunted look in a fugitive’s eyes and offers her a place to stay. With dwindling choices, Tanya-now-Amelia accepts. An uneasy―and dangerous―alliance is born. It’s almost impossible to live off the grid in the twenty-first century, but Amelia-now-Debra and Blue have the courage, the ingenuity, and the desperation, to try. Hopscotching from city to city, Debra especially is chased by a very dark secret. From heart-stopping escapes and devious deceptions, we are left to wonder…can she possibly outrun her past? The Passenger’s white-knuckled plot and unforeseeable twists make one thing for certain: the ride will leave you breathless. “When the answers finally come, they are juicy, complex, and unexpected. The satisfying conclusion will leave readers rethinking everything and immediately turning back to the first page to start again. Psychological suspense lovers will tear through this thriller” (Library Journal, starred review)."
+  
+        },
+         {
+          "id": "to-kill-a-mockingbird",
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "authorId":"harper-lee",
+          "imageUrl": "./img/ToKillAMockingbird.gif",
+          "category": "Drama",
+          "date":1960,
+           "blurb":"Harper Lee's Pulitzer prize-winning masterwork of honor and injustice in the deep south—and the heroism of one man in the face of blind and violent hatred. One of the best-loved stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime."
+  
+        },
+         {
+          "id": "the-book-thief",
+          "title": "The Book Thief",
+          "author": "Markus Zusak ",
+          "authorId":"markus-zusak",
+          "imageUrl": "./img/BookThief.jpg",
+          "category": "Drama",
+          "blurb":"The extraordinary #1 New York Times bestseller that is now a major motion picture, Markus Zusak's unforgettable story is about the ability of books to feed the soul.It is 1939. Nazi Germany. The country is holding its breath. Death has never been busier, and will become busier still. Liesel Meminger is a foster girl living outside of Munich, who scratches out a meager existence for herself by stealing when she encounters something she can’t resist–books. With the help of her accordion-playing foster father, she learns to read and shares her stolen books with her neighbors during bombing raids as well as with the Jewish man hidden in her basement. In superbly crafted writing that burns with intensity, award-winning author Markus Zusak, author of I Am the Messenger, has given us one of the most enduring stories of our time.",
+          "date": 2005
+        },
+        {
+          "id": "animal-farm",
+          "title": "Animal Farm",
+          "author": "George Orwell ",
+          "authorId":"george-orwell",
+          "imageUrl": "./img/AnimalFarm.jpg",
+          "category": "Allegorical",
+          "date": 1945,
+          "blurb": "'All animals are equal - but some are more equal than others' When the downtrodden animals of Manor Farm overthrow their master Mr Jones and take over the farm themselves, they imagine it is the beginning of a life of freedom and equality. But gradually a cunning, ruthless élite among them, masterminded by the pigs Napoleon and Snowball, starts to take control. Soon the other animals discover that they are not all as equal as they thought, and find themselves hopelessly ensnared as one form of tyranny is replaced with another. 'It is the history of a revolution that went wrong - and of the excellent excuses that were forthcoming at every step for the perversion of the original doctrine,' wrote Orwell for the first edition of Animal Farm in 1945. Orwell wrote the novel at the end of 1943, but it almost remained unpublished; its savage attack on Stalin, at that time Britain's ally, led to the book being refused by publisher after publisher. Orwell's simple, tragic fable has since become a world-famous classic. "
+        }
+      ]
+    }
