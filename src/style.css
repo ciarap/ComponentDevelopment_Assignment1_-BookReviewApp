@@ -149,7 +149,9 @@ margin-top:40px;
       background-color: #FFFFFF;
       height: auto;
       width: 90%;
-      padding: 10px;
+      padding-top: 10px;
+       padding-left : 10px;
+        padding-right : 10px;
       margin-bottom: 1em;
     }
 

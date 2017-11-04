@@ -107,178 +107,244 @@
   ],
   "reviews": [
     {
-      "id": 1,
-      "opinion": "Very Good",
-      "username": "John Doe",
-      "bookId": "animal-farm"
+      "upvotes": 3,
+      "id": 1
     },
     {
-      "id": 2,
-      "opinion": "Alright",
-      "username": "Jane Doe",
-      "bookId": "animal-farm"
+      "upvotes": 4,
+      "id": 2
     },
     {
       "id": 3,
       "opinion": "Grand",
       "username": "Jimmy Doe",
-      "bookId": "the-notebook"
+      "bookId": "the-notebook",
+      "upvote": 21
     },
     {
       "opinion": "Good",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "Sara",
-      "id": 4
+      "id": 4,
+      "upvote": 7
     },
     {
       "opinion": "Grand",
       "bookId": "the-notebook",
       "username": "Ciara",
-      "id": 5
+      "id": 5,
+      "upvote": 14
     },
     {
       "opinion": "Not Great",
       "bookId": "the-notebook",
       "username": "Adam",
-      "id": 6
+      "id": 6,
+      "upvote": 7
     },
     {
       "opinion": "Fantastic",
       "bookId": "the-book-thief",
       "username": "joe",
-      "id": 7
+      "id": 7,
+      "upvote": 2
     },
     {
       "opinion": "Meh",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "Joe",
-      "id": 8
-    },
-    {
-      "opinion": "Its ok",
-      "bookId": "animal-farm",
-      "username": "Emma",
-      "id": 9
-    },
-    {
-      "opinion": "Its Good!!",
-      "bookId": "animal-farm",
-      "username": "Eric",
-      "id": 10
-    },
-    {
-      "opinion": "Yep",
-      "bookId": "animal-farm",
-      "username": "nn",
-      "id": 11
+      "id": 8,
+      "upvote": 3
     },
     {
       "opinion": "Graaand",
       "bookId": "the-book-thief",
       "username": "ian",
-      "id": 12
-    },
-    {
-      "opinion": "Unreal",
-      "bookId": "animal-farm",
-      "username": "Jim",
-      "id": 13
+      "id": 12,
+      "upvote": 2
     },
     {
       "opinion": "Great",
       "bookId": "to-kill-a-mockingbird",
       "username": "Jo",
-      "id": 14
+      "id": 14,
+      "upvote": 5
     },
     {
       "opinion": "Sinister, sad, yet true. Animal Farm is the most thought-provoking piece of literature I have ever read.  Captioned 'a fairy story', Animal Farm is anything but that. Sick and tired of maltreatment under their enslavement from man, the animals of Manor Farm revolt. Released from all chains, there is but one key rule: All animals are equal. Yet, as the story progresses we soon see some animals are more equal than others…  Written in an elegantly simple style, Orwell uses the turmoil faced on the farm by the animals as a metaphor for the Russian Revolution itself. It shows how a people's fight for freedom can so quickly morph into a power play as chaos ensues. Orwell cleverly plants lies, illiteracy and even a head hunt throughout the novel to explain the oppression, propaganda and elaborate excuses that led to the rise of the Soviet dictatorship.   Sign up for the Bookmarks email  Read more Yet, this novel goes beyond addressing the Russian Revolution, it speaks to all revolts there have been and will ever be. It suggests an uprising is futile, that things will remain how they have always been neither getting better nor worse. All simply remains constant. Here I cannot agree with what George Orwell has to say, but right or wrong this book is a brilliant politically minded piece that is an irrevocable page turner, easily read in one sitting.  Truly a timeless classic that speaks so much of human nature. Plus, it's quaint farmyard setting makes this a very British book, lucky enough to have become a global phenomenon.",
       "bookId": "animal-farm",
       "username": "Liam P",
-      "id": 15
+      "id": 15,
+      "upvote": 22,
+      "upvotes": 3
     },
     {
       "opinion": "d",
       "bookId": "animal-farm",
       "username": "d",
-      "id": 16
+      "id": 16,
+      "upvote": 17
     },
     {
       "opinion": "h",
       "bookId": "animal-farm",
       "username": "v",
-      "id": 17
+      "id": 17,
+      "upvote": 20
     },
     {
       "opinion": "Great Book - Well Worth a read !",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "Ciara",
-      "id": 18
+      "id": 18,
+      "upvote": 8
     },
     {
       "opinion": "good read",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "gav",
-      "id": 19
+      "id": 19,
+      "upvote": 3
     },
     {
       "opinion": "Good",
       "bookId": "the-notebook",
       "username": "Millie",
-      "id": 20
+      "id": 20,
+      "upvote": 8
     },
     {
       "opinion": "m",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "bhh",
-      "id": 21
+      "id": 21,
+      "upvote": 3
     },
     {
       "opinion": "m",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "o",
-      "id": 22
+      "id": 22,
+      "upvote": 3
     },
     {
       "opinion": "m",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "k",
-      "id": 23
+      "id": 23,
+      "upvote": 3
     },
     {
       "opinion": "j",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "g",
-      "id": 24
+      "id": 24,
+      "upvote": 3
     },
     {
       "opinion": "k",
       "bookId": "the-book-thief",
       "username": "j",
-      "id": 25
+      "id": 25,
+      "upvote": 2
     },
     {
       "opinion": "Great Book",
       "bookId": "the-passenger",
       "username": "Johnny",
-      "id": 26
+      "id": 26,
+      "upvote": 2
     },
     {
       "opinion": "hd",
       "bookId": "the-notebook",
       "username": "dd",
-      "id": 27
+      "id": 27,
+      "upvote": 2
     },
     {
       "opinion": "njj",
       "bookId": "the-notebook",
       "username": "kuytgf",
-      "id": 28
+      "id": 28,
+      "upvote": 2
     },
     {
       "opinion": "hgv",
       "bookId": "the-notebook",
       "username": "kuygbnj",
-      "id": 29
+      "id": 29,
+      "upvote": 2
+    },
+    {
+      "opinion": "good book",
+      "bookId": "the-book-thief",
+      "username": "CP",
+      "id": 30,
+      "upvote": 2
+    },
+    {
+      "opinion": "Great Book",
+      "bookId": "animal-farm",
+      "username": "Ron",
+      "id": 31,
+      "upvote": 2
+    },
+    {
+      "opinion": "bad tbh",
+      "bookId": "animal-farm",
+      "username": "cat",
+      "id": 32,
+      "upvote": 4
+    },
+    {
+      "opinion": "d",
+      "bookId": "animal-farm",
+      "username": "d",
+      "id": 33,
+      "upvote": 22
+    },
+    {
+      "opinion": "hhh",
+      "bookId": "the-notebook",
+      "username": "jjjjj",
+      "upvote": 0,
+      "id": 34
+    },
+    {
+      "opinion": "kjh",
+      "bookId": "animal-farm",
+      "username": "jjj",
+      "upvote": 1,
+      "id": 35
+    },
+    {
+      "opinion": "jh",
+      "bookId": "animal-farm",
+      "username": "kjhg",
+      "upvote": 3,
+      "id": 36
+    },
+    {
+      "opinion": "juy",
+      "bookId": "animal-farm",
+      "username": "uytgf",
+      "upvote": 9,
+      "id": 37
+    },
+    {
+      "opinion": "iuytghjiuy",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "uygfvbhjuytgfv",
+      "upvote": 3,
+      "id": 38
+    },
+    {
+      "opinion": "kjh",
+      "bookId": "to-kill-a-mockingbird",
+      "username": "iuygh",
+      "upvote": 3,
+      "id": 39
     }
   ]
 }
