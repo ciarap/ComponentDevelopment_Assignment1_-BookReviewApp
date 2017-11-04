@@ -122,7 +122,7 @@
       "id": 3,
       "opinion": "Grand",
       "username": "Jimmy Doe",
-      "bookId": "the-passenger"
+      "bookId": "the-notebook"
     },
     {
       "opinion": "Good",
@@ -132,7 +132,7 @@
     },
     {
       "opinion": "Grand",
-      "bookId": "the-passenger",
+      "bookId": "the-notebook",
       "username": "Ciara",
       "id": 5
     },
@@ -189,7 +189,96 @@
       "bookId": "to-kill-a-mockingbird",
       "username": "Jo",
       "id": 14
+    },
+    {
+      "opinion": "Sinister, sad, yet true. Animal Farm is the most thought-provoking piece of literature I have ever read.  Captioned 'a fairy story', Animal Farm is anything but that. Sick and tired of maltreatment under their enslavement from man, the animals of Manor Farm revolt. Released from all chains, there is but one key rule: All animals are equal. Yet, as the story progresses we soon see some animals are more equal than others…  Written in an elegantly simple style, Orwell uses the turmoil faced on the farm by the animals as a metaphor for the Russian Revolution itself. It shows how a people's fight for freedom can so quickly morph into a power play as chaos ensues. Orwell cleverly plants lies, illiteracy and even a head hunt throughout the novel to explain the oppression, propaganda and elaborate excuses that led to the rise of the Soviet dictatorship.   Sign up for the Bookmarks email  Read more Yet, this novel goes beyond addressing the Russian Revolution, it speaks to all revolts there have been and will ever be. It suggests an uprising is futile, that things will remain how they have always been neither getting better nor worse. All simply remains constant. Here I cannot agree with what George Orwell has to say, but right or wrong this book is a brilliant politically minded piece that is an irrevocable page turner, easily read in one sitting.  Truly a timeless classic that speaks so much of human nature. Plus, it's quaint farmyard setting makes this a very British book, lucky enough to have become a global phenomenon.",
+      "bookId": "animal-farm",
+      "username": "Liam P",
+      "id": 15
+    },
+    {
+      "opinion": "d",
+      "bookId": "animal-farm",
+      "username": "d",
+      "id": 16
+    },
+    {
+      "opinion": "h",
+      "bookId": "animal-farm",
+      "username": "v",
+      "id": 17
+    },
+    {
+      "opinion": "Great Book - Well Worth a read !",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "Ciara",
+      "id": 18
+    },
+    {
+      "opinion": "good read",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "gav",
+      "id": 19
+    },
+    {
+      "opinion": "Good",
+      "bookId": "the-notebook",
+      "username": "Millie",
+      "id": 20
+    },
+    {
+      "opinion": "m",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "bhh",
+      "id": 21
+    },
+    {
+      "opinion": "m",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "o",
+      "id": 22
+    },
+    {
+      "opinion": "m",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "k",
+      "id": 23
+    },
+    {
+      "opinion": "j",
+      "bookId": "harry-potter-and-the-chamber-of-secrets",
+      "username": "g",
+      "id": 24
+    },
+    {
+      "opinion": "k",
+      "bookId": "the-book-thief",
+      "username": "j",
+      "id": 25
+    },
+    {
+      "opinion": "Great Book",
+      "bookId": "the-passenger",
+      "username": "Johnny",
+      "id": 26
+    },
+    {
+      "opinion": "hd",
+      "bookId": "the-notebook",
+      "username": "dd",
+      "id": 27
+    },
+    {
+      "opinion": "njj",
+      "bookId": "the-notebook",
+      "username": "kuytgf",
+      "id": 28
+    },
+    {
+      "opinion": "hgv",
+      "bookId": "the-notebook",
+      "username": "kuygbnj",
+      "id": 29
     }
-  
   ]
 }

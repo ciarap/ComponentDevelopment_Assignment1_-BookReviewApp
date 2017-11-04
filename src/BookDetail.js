@@ -110,7 +110,7 @@
                        <h1 className="BlackPageTitle">{book.title}</h1>      
                     </div>
                     <div className="col-md-1">
-                     <Link className="link" to={'/AllBooks/'+book.id+'/BookReviews'}>
+                     <Link className="link" to={'/AllBooks/'+book.id+'/'+book.authorId+'/BookReviews'}>
                        <img className="img-responsive back-arrow" src="/img/forward_arrow.png" alt="arrow" />
                         <figcaption>  Reviews  </figcaption>
                         </Link> 

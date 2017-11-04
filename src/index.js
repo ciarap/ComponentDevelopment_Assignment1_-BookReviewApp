@@ -49,7 +49,7 @@ var App = React.createClass({
                 <Route path="/" component={App}>
                 <IndexRoute component={Homepage}/>
                 <Route path ="/AllBooks" component={AllBooks}/>
-                 <Route path="AllBooks/:id/BookReviews" component={BookReviews} />
+                 <Route path="AllBooks/:id/:authorId/BookReviews" component={BookReviews} />
                 <Route path="AllBooks/:id/:authorId" component={BookDetail} />
                
                 </Route>

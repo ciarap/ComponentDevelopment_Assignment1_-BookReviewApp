@@ -137,11 +137,20 @@ margin-top:40px;
       width: 95px;
     }
 
-    .books li,.reviews li {
+    .books li{
       clear: both;
       height: 180px;
       width: 70%;
       padding-top: 15px;
+    }
+
+    .reviews li {
+      clear: both;
+      background-color: #FFFFFF;
+      height: auto;
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 1em;
     }
 
 .link{
