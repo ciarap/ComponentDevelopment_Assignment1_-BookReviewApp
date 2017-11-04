@@ -99,16 +99,22 @@
           if (book) {
               bookDisplay =  (
                 <div>
-                    <div className="row">
+                    <div className="row header" >
                       <div className="col-md-1">
                        <Link className="link" to={'/AllBooks/'}> 
-                       <img className="img-responsive back-arrow" src="/img/back_arrow.png" alt="Back Arrow" />
+                       <img className="img-responsive back-arrow" src="/img/back_arrow.png" alt="arrow" />
                         <figcaption>  Go Back  </figcaption>
                         </Link> 
                         </div>
                          <div className="col-md-10">
                        <h1 className="BlackPageTitle">{book.title}</h1>      
                     </div>
+                    <div className="col-md-1">
+                     <Link className="link" to={'/AllBooks/'+book.id+'/BookReviews'}>
+                       <img className="img-responsive back-arrow" src="/img/forward_arrow.png" alt="arrow" />
+                        <figcaption>  Reviews  </figcaption>
+                        </Link> 
+                        </div>
                     </div>
                     <BookSection book={book} />
                     {authorDisplay}

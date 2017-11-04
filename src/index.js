@@ -7,6 +7,7 @@ import React from 'react';
     import Homepage from './App';
     import AllBooks from './AllBooks';
     import BookDetail from './BookDetail';
+    import BookReviews from './BookReviews';
 
 
 
@@ -48,7 +49,9 @@ var App = React.createClass({
                 <Route path="/" component={App}>
                 <IndexRoute component={Homepage}/>
                 <Route path ="/AllBooks" component={AllBooks}/>
+                 <Route path="AllBooks/:id/BookReviews" component={BookReviews} />
                 <Route path="AllBooks/:id/:authorId" component={BookDetail} />
+               
                 </Route>
               </Router>
             ,
