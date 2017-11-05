@@ -58,12 +58,19 @@ class ReviewListItem extends React.Component {
        let lineStyle = {
                 fontSize: '20px', margin: '10px'  };
             return (
-                <div >
+                <div>
                 <li style={{border: '1px solid black'}}>
                 <div className="row" style={lineStyle}>
+                 <div className="col-md-11">
                 <span style={lineStyle} >
                         {this.props.review.opinion}
                     </span>
+                    </div>
+                    <div className="col-md-1" style={{float:'right',textAlign:'right'}}>
+                    <button type="delete" className="btn btn-danger"
+                        >Delete</button>
+                        </div>
+
                     </div>
                     <div className="row" style={{ marginLeft: '-0.5em',marginRight: '-0.5em',backgroundColor:' #DCDCDC'}}>
                    
@@ -73,7 +80,6 @@ class ReviewListItem extends React.Component {
                       <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
                     <span className="glyphicon glyphicon-thumbs-up"  style={{ cursor: 'pointer',fontSize:'20px' }} onClick={this.handleVote}> {this.props.review.upvote}</span> 
                     </div>
-                   
                     </div>
                     </li>
                 </div>                

@@ -78,17 +78,23 @@ if(book){
   bookDisplay=(
     <div>
     <li style={{border: '1px solid black'}} >
+    <div className="row">
    <div className="col-md-2" style={{margin:'auto'}}>
              <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>
             <img src={"../"+book.imageUrl} alt= {book.title} className="thumb"/>
                  </Link>
                  </div>
-                  <div className="col-md-14">
+                  <div className="col-md-9">
                  <h4><span  style={{fontWeight:'bold'}}>Book:</span>  <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>{book.title}</Link></h4>
                 <h4><span  style={{fontWeight:'bold'}}> User: </span>{this.props.review.username}</h4>
                 <h4> <span style={{fontWeight:'bold'}}>Votes: </span>{this.props.review.upvote}</h4>
                 <h4> <span  style={{fontWeight:'bold'}}>Review: </span>{this.props.review.opinion}</h4>
                 </div>
+                 <div className="col-md-1" style={{float:'right',textAlign:'right'}}>
+                    <button type="delete" className="btn btn-danger"
+                        >Delete</button>
+                        </div>
+                        </div>
                 </li>
                 </div>
   )

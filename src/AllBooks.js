@@ -2,7 +2,6 @@ import React from 'react';
 import LocalBookCache from './LocalBookCache';
 import _ from 'lodash';
  import { Link } from 'react-router'; 
-  import BookCache from './BookCache';
 
 var request = require('superagent') ;
 
@@ -53,21 +52,31 @@ class BookListItem extends React.Component {
     render() {
         return (
             <li className="thumbnail book-listing">
+            <div>
+            <div className="row">
             <div className="col-md-2">
              <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
             <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
                  </Link>
                  </div>
-                  <div className="col-md-10">
+                  <div className="col-md-7">
                    <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
                  <h3>{this.props.book.title}</h3>
                  </Link>
                 <h4> Author: {this.props.book.author}</h4>
                 <h4> Category: {this.props.book.category}</h4>
                  <h4> Publish Date: {this.props.book.date}</h4>
-</div>
- <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
+             </div>
+                  <div className="col-md-3" style={{float:'right',textAlign:'right'}}>
+                    <button type="delete" className="btn btn-danger"
+                        >Delete</button>
+                        </div>
+                        </div>
+                           <div className="row">
+               <div className="col-md-3" style={{float:'right',textAlign:'right'}}>
                     <span className="glyphicon glyphicon-heart "  style={{ color: 'red',cursor: 'pointer',fontSize:'25px' }} onClick={this.handleVote}> {this.props.book.votes}</span> 
+                    </div>
+                    </div>
                     </div>
             </li>
         );

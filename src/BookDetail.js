@@ -89,7 +89,7 @@
             .end(function(error, res){
                 if (res) {
                   if(error){
-                    if (error.status == 404){
+                    if (error.status === 404){
                     AuthorCache.setAuthor(null);
                   }
                 }

@@ -159,7 +159,7 @@ class Form extends React.Component {
             .end(function(error, res){
                 if (res) {
                   if(error){
-                    if (error.status == 404){
+                    if (error.status === 404){
                      request.post('http://localhost:3000/authors/',{"name":author, "id":authorId,"url":authorWikiUrl, "imageUrl":authorImageUrl,"info":authorInfo})
                       .end(function(error, res){
                       if (res) {
