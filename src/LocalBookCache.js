@@ -1,5 +1,5 @@
 
-class LocalCache {
+class LocalBookCache {
 
     constructor() {
         this.books = [] ;
@@ -16,4 +16,4 @@ class LocalCache {
 
 }
 
-export default (new LocalCache() );
+export default (new LocalBookCache() );

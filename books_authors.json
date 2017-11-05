@@ -41,6 +41,20 @@
       "name": "Nicholas Sparks",
       "url": "https://en.wikipedia.org/wiki/Nicholas_Sparks",
       "info": "Nicholas Charles Sparks (born December 31, 1965) is an American romance novelist, screenwriter and producer. He has published eighteen novels and two non-fiction books. Several of his novels have become international bestsellers, and eleven of his romantic-drama novels have been adapted to film all with multimillion-dollar box office grosses.Sparks was born in Omaha, Nebraska and wrote his first novel, The Passing, in 1985, while a student at the University of Notre Dame. His first published work came in 1990, when he co-wrote with Billy Mills Wokini: A Lakota Journey to Happiness and Self-Understanding, which sold approximated 50,000 copies in its first year. In 1993, Sparks wrote his breakthrough novel The Notebook in his spare time while selling pharmaceuticals in Washington, D.C.. Two years later, his novel was discovered by literary agent Theresa Park who offered to represent him. The novel was published in October 1996 and made the New York Times best-seller list in its first week of release."
+    },
+    {
+      "name": "John Doe",
+      "id": "john-doe",
+      "url": "https://en.wikipedia.org/wiki/John_Doe",
+      "imageUrl": "./img/markus-zusak.jpg",
+      "info": "Fake"
+    },
+    {
+      "name": "Jimmy D",
+      "id": "jimmy-d",
+      "url": "https://en.wikipedia.org/wiki/John_Doe",
+      "imageUrl": "./img/markus-zusak.jpg",
+      "info": "uygvbniuyg"
     }
   ],
   "books": [
@@ -52,7 +66,9 @@
       "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
       "category": "Fantasy",
       "date": 1998,
-      "blurb": "The Dursleys were so mean that hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike. And strike it does. For in Harry's second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockheart, a spirit named Moaning Myrtle who haunts the girls' bathroom, and the unwanted attentions of Ron Weasley's younger sister, Ginny. But each of these seem minor annoyances when the real trouble begins, and someone--or something--starts turning Hogwarts students to stone. Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects...Harry Potter himself?"
+      "votes": 10,
+      "blurb": "The Dursleys were so mean that hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike. And strike it does. For in Harry's second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockheart, a spirit named Moaning Myrtle who haunts the girls' bathroom, and the unwanted attentions of Ron Weasley's younger sister, Ginny. But each of these seem minor annoyances when the real trouble begins, and someone--or something--starts turning Hogwarts students to stone. Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects...Harry Potter himself?",
+      "vote": null
     },
     {
       "id": "the-notebook",
@@ -61,6 +77,7 @@
       "authorId": "nicholas-sparks",
       "imageUrl": "./img/notebook.jpg",
       "category": "Romance",
+      "votes": 4,
       "blurb": "Every so often a love story so captures our hearts that it becomes more than a story-it becomes an experience to remember forever. The Notebook is such a book. It is a celebration of how passion can be ageless and timeless, a tale that moves us to laughter and tears and makes us believe in true love all over again... ...At thirty-one, Noah Calhoun, back in coastal North Carolina after World War II, is haunted by images of the girl he lost more than a decade earlier. At twenty-nine, socialite Allie Nelson is about to marry a wealthy lawyer, but she cannot stop thinking about the boy who long ago stole her heart. Thus begins the story of a love so enduring and deep it can turn tragedy into triumph, and may even have the power to create a miracle...",
       "date": 1996
     },
@@ -71,6 +88,7 @@
       "authorId": "lisa-lutz",
       "imageUrl": "./img/passenger.jpg",
       "category": "Thriller",
+      "votes": 4,
       "date": 2016,
       "blurb": "“A dead-serious thriller (with a funny bone)” (The New York Times Book Review), from the author of the New York Times bestselling Spellman Files series, comes the story of a woman who creates and sheds new identities as she crisscrosses the country to escape her past. Forty-eight hours after leaving her husband’s body at the base of the stairs, Tanya Dubois cashes in her credit cards, dyes her hair brown, demands a new name from a shadowy voice over the phone, and flees town. It’s not the first time. She meets Blue, a female bartender who recognizes the hunted look in a fugitive’s eyes and offers her a place to stay. With dwindling choices, Tanya-now-Amelia accepts. An uneasy―and dangerous―alliance is born. It’s almost impossible to live off the grid in the twenty-first century, but Amelia-now-Debra and Blue have the courage, the ingenuity, and the desperation, to try. Hopscotching from city to city, Debra especially is chased by a very dark secret. From heart-stopping escapes and devious deceptions, we are left to wonder…can she possibly outrun her past? The Passenger’s white-knuckled plot and unforeseeable twists make one thing for certain: the ride will leave you breathless. “When the answers finally come, they are juicy, complex, and unexpected. The satisfying conclusion will leave readers rethinking everything and immediately turning back to the first page to start again. Psychological suspense lovers will tear through this thriller” (Library Journal, starred review)."
     },
@@ -81,6 +99,7 @@
       "authorId": "harper-lee",
       "imageUrl": "./img/ToKillAMockingbird.gif",
       "category": "Drama",
+      "votes": 2,
       "date": 1960,
       "blurb": "Harper Lee's Pulitzer prize-winning masterwork of honor and injustice in the deep south—and the heroism of one man in the face of blind and violent hatred. One of the best-loved stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime."
     },
@@ -91,6 +110,7 @@
       "authorId": "markus-zusak",
       "imageUrl": "./img/BookThief.jpg",
       "category": "Drama",
+      "votes": 5,
       "blurb": "The extraordinary #1 New York Times bestseller that is now a major motion picture, Markus Zusak's unforgettable story is about the ability of books to feed the soul.It is 1939. Nazi Germany. The country is holding its breath. Death has never been busier, and will become busier still. Liesel Meminger is a foster girl living outside of Munich, who scratches out a meager existence for herself by stealing when she encounters something she can’t resist–books. With the help of her accordion-playing foster father, she learns to read and shares her stolen books with her neighbors during bombing raids as well as with the Jewish man hidden in her basement. In superbly crafted writing that burns with intensity, award-winning author Markus Zusak, author of I Am the Messenger, has given us one of the most enduring stories of our time.",
       "date": 2005
     },
@@ -101,19 +121,79 @@
       "authorId": "george-orwell",
       "imageUrl": "./img/AnimalFarm.jpg",
       "category": "Allegorical",
+      "votes": 11,
       "date": 1945,
-      "blurb": "'All animals are equal - but some are more equal than others' When the downtrodden animals of Manor Farm overthrow their master Mr Jones and take over the farm themselves, they imagine it is the beginning of a life of freedom and equality. But gradually a cunning, ruthless élite among them, masterminded by the pigs Napoleon and Snowball, starts to take control. Soon the other animals discover that they are not all as equal as they thought, and find themselves hopelessly ensnared as one form of tyranny is replaced with another. 'It is the history of a revolution that went wrong - and of the excellent excuses that were forthcoming at every step for the perversion of the original doctrine,' wrote Orwell for the first edition of Animal Farm in 1945. Orwell wrote the novel at the end of 1943, but it almost remained unpublished; its savage attack on Stalin, at that time Britain's ally, led to the book being refused by publisher after publisher. Orwell's simple, tragic fable has since become a world-famous classic. "
+      "blurb": "'All animals are equal - but some are more equal than others' When the downtrodden animals of Manor Farm overthrow their master Mr Jones and take over the farm themselves, they imagine it is the beginning of a life of freedom and equality. But gradually a cunning, ruthless élite among them, masterminded by the pigs Napoleon and Snowball, starts to take control. Soon the other animals discover that they are not all as equal as they thought, and find themselves hopelessly ensnared as one form of tyranny is replaced with another. 'It is the history of a revolution that went wrong - and of the excellent excuses that were forthcoming at every step for the perversion of the original doctrine,' wrote Orwell for the first edition of Animal Farm in 1945. Orwell wrote the novel at the end of 1943, but it almost remained unpublished; its savage attack on Stalin, at that time Britain's ally, led to the book being refused by publisher after publisher. Orwell's simple, tragic fable has since become a world-famous classic. ",
+      "vote": null
+    },
+    {
+      "id": "iuy",
+      "authorId": "uytgh",
+      "title": "iuy",
+      "author": "uytgh",
+      "imageUrl": "./img/notebook.jpg",
+      "category": "General",
+      "votes": 2,
+      "date": 1955,
+      "blurb": "juytghj"
+    },
+    {
+      "id": "new-ciara-book",
+      "authorId": "nicholas-sparks",
+      "title": "New Ciara Book",
+      "author": "Nicholas Sparks",
+      "imageUrl": "./img/passenger.jpg",
+      "category": "Romance",
+      "votes": 4,
+      "date": 1990,
+      "blurb": "Good Book"
+    },
+    {
+      "id": "new8765",
+      "authorId": "nicholas-sparks",
+      "title": "new8765",
+      "author": "nicholas sparks",
+      "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
+      "category": "General",
+      "votes": 2,
+      "date": 1000,
+      "blurb": "juytghjuytg"
+    },
+    {
+      "id": "newbooknewauthor",
+      "authorId": "john-doe",
+      "title": "NewBookNewAuthor",
+      "author": "John Doe",
+      "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
+      "category": "General",
+      "votes": 3,
+      "date": 1990,
+      "blurb": "uytghjuytfb"
+    },
+    {
+      "id": "neewwww",
+      "authorId": "jimmy-d",
+      "title": "neewwww",
+      "author": "Jimmy D",
+      "imageUrl": "./img/harrypotter_ChamberOfSecrets.jpg",
+      "category": "General",
+      "votes": 4,
+      "date": 1229,
+      "blurb": "uytfjuytgfv"
+    },
+    {
+      "votes": 11,
+      "id": "uyyyyyy",
+      "authorId": "lisa-lutz",
+      "title": "uyyyyyy",
+      "author": "lisa lutz",
+      "imageUrl": ".",
+      "category": "General",
+      "date": 7777,
+      "blurb": "juytgh"
     }
   ],
   "reviews": [
-    {
-      "upvotes": 3,
-      "id": 1
-    },
-    {
-      "upvotes": 4,
-      "id": 2
-    },
     {
       "id": 3,
       "opinion": "Grand",
@@ -197,14 +277,14 @@
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "Ciara",
       "id": 18,
-      "upvote": 8
+      "upvote": 12
     },
     {
       "opinion": "good read",
       "bookId": "harry-potter-and-the-chamber-of-secrets",
       "username": "gav",
       "id": 19,
-      "upvote": 3
+      "upvote": 8
     },
     {
       "opinion": "Good",
@@ -302,7 +382,7 @@
       "bookId": "animal-farm",
       "username": "d",
       "id": 33,
-      "upvote": 22
+      "upvote": 23
     },
     {
       "opinion": "hhh",
@@ -315,7 +395,7 @@
       "opinion": "kjh",
       "bookId": "animal-farm",
       "username": "jjj",
-      "upvote": 1,
+      "upvote": 3,
       "id": 35
     },
     {
@@ -345,6 +425,34 @@
       "username": "iuygh",
       "upvote": 3,
       "id": 39
+    },
+    {
+      "opinion": "kiuyg",
+      "bookId": "animal-farm",
+      "username": "loiuytfvb",
+      "upvote": 0,
+      "id": 40
+    },
+    {
+      "opinion": "kjhn",
+      "bookId": "the-notebook",
+      "username": "n",
+      "upvote": 0,
+      "id": 41
+    },
+    {
+      "opinion": "h",
+      "bookId": "the-notebook",
+      "username": "j",
+      "upvote": 0,
+      "id": 42
+    },
+    {
+      "opinion": "Great",
+      "bookId": "nw",
+      "username": "Joe",
+      "upvote": 1,
+      "id": 43
     }
   ]
 }

@@ -127,21 +127,34 @@ margin-top:40px;
 }
 
 
- .books,.reviews {
+ .books,.reviews,.allReviews,.allPopularBooks {
       list-style: none;
     }
 
     .thumb {
       float: left;
       padding-bottom: 1em;
-      width: 95px;
+      width: 120px;
     }
 
     .books li{
       clear: both;
-      height: 180px;
+      height: 190px;
       width: 70%;
       padding-top: 15px;
+    }
+
+    .allReviews li,.allPopularBooks li{
+      clear: both;
+       background-color: #FFFFFF;
+      height: auto;
+      min-height: 210px;
+      width: 90%;
+      padding-top: 10px;
+       padding-left : 10px;
+        padding-right : 10px;
+      margin:auto;
+      margin-bottom:1em;
     }
 
     .reviews li {
@@ -182,7 +195,6 @@ text-decoration: none;
   font-size:40px;
   padding: 0.5em;
   text-align: center;
-  border-bottom: none;
 }
 
 @media (min-width: 768px){
@@ -224,13 +236,24 @@ display: inline-block;
       width: 400px;
     }
 
-    .authorAbout,.about{
+    .authorAbout{
       float: left;
       border: 1px solid black;
       margin-left:2em;
       margin-bottom: 2em;
       background-color: #FFFFFF; 
       padding: 2em;
+      width:95%;
+    }
+
+    .about{
+      float: left;
+      border: 1px solid black;
+      margin-left:2em;
+      margin-bottom: 2em;
+      background-color: #FFFFFF; 
+      padding: 2em;
+    
     }
 
 .book-images,
@@ -250,5 +273,9 @@ h1{
 
 .header{
   margin-bottom: 3em;
+}
+
+.bold{
+  font-weight:bold; 
 }
    

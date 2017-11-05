@@ -1,7 +1,8 @@
 import React from 'react';
-import localCache from './localCache';
+import LocalBookCache from './LocalBookCache';
 import _ from 'lodash';
  import { Link } from 'react-router'; 
+  import BookCache from './BookCache';
 
 var request = require('superagent') ;
 
@@ -32,9 +33,10 @@ class SelectBox extends React.Component {
                 <select id="sort" value={this.props.order } 
                     onChange={this.handleSortChange} >
                     <option value="title">Alphabetical</option>
-                    <option value="date">Oldest First</option>
+                    <option value="date">Newest</option>
                     <option value="author">Author</option>
                     <option value="category">Category</option>
+                     <option value="votes">Highest Rated</option>
                 </select>
                 </div>
             </div>
@@ -44,6 +46,10 @@ class SelectBox extends React.Component {
 
 
 class BookListItem extends React.Component {
+
+    handleVote = () => {
+            this.props.upvoteHandler(this.props.book.id,this.props.book.votes);
+        };
     render() {
         return (
             <li className="thumbnail book-listing">
@@ -52,7 +58,7 @@ class BookListItem extends React.Component {
             <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
                  </Link>
                  </div>
-                  <div className="col-md-8">
+                  <div className="col-md-10">
                    <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
                  <h3>{this.props.book.title}</h3>
                  </Link>
@@ -60,6 +66,9 @@ class BookListItem extends React.Component {
                 <h4> Category: {this.props.book.category}</h4>
                  <h4> Publish Date: {this.props.book.date}</h4>
 </div>
+ <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
+                    <span className="glyphicon glyphicon-heart "  style={{ color: 'red',cursor: 'pointer',fontSize:'25px' }} onClick={this.handleVote}> {this.props.book.votes}</span> 
+                    </div>
             </li>
         );
     }
@@ -69,8 +78,8 @@ class BookListItem extends React.Component {
 class FilteredBookList extends React.Component {
       render() {
           var displayedBooks = this.props.books.map(function(book) {
-            return <BookListItem key={book.id} book={book} /> ;
-          }) ;
+            return <BookListItem key={book.id} book={book}  upvoteHandler={this.props.upvoteHandler} /> ;
+          }.bind(this)) ;
           return (
                   <div className="col-md-10">
                     <ul className="books">
@@ -83,12 +92,39 @@ class FilteredBookList extends React.Component {
 
 
 class AllBooks extends React.Component{
+
+   componentWillUpdate() {
+
+        request.get('http://localhost:3000/books')
+            .end(function(error, res){
+                if (res) {
+                    var newBooks = JSON.parse(res.text);
+                    var oldBooks=LocalBookCache.getAll();
+                    LocalBookCache.populate(newBooks);
+                    newBooks=LocalBookCache.getAll();
+
+               
+                for(var i=0;i<newBooks.length;i++){
+                    if(newBooks[i].votes !== oldBooks[i].votes){
+                      this.setState({});
+                    }
+                }
+              }
+                 else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+
+           
+      };
+
+
 componentDidMount() {
         request.get('http://localhost:3000/books')
             .end(function(error, res){
                 if (res) {
                     var books = JSON.parse(res.text);
-                    localCache.populate(books);
+                    LocalBookCache.populate(books);
                     this.setState({}) ; 
                 } else {
                     console.log(error );
@@ -103,12 +139,28 @@ state = { search: '', sort: 'title' };
             this.setState( { sort: value } ) ;
         }
     };
+
+     incrementUpvote = (bookId,votes) => {
+             request.patch('http://localhost:3000/books/'+bookId,{"votes": votes+1})
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
           render(){
-                let list = localCache.getAll().filter( (p) => {
+                let list = LocalBookCache.getAll().filter( (p) => {
                     return p.title.toLowerCase().search(
                         this.state.search.toLowerCase() ) !== -1 ;
                 } );
                 let filteredList = _.sortBy(list, this.state.sort) ;
+                if(this.state.sort==="votes" || this.state.sort==="date"){
+                  filteredList=filteredList.reverse();
+                }
            return (
            <div className="booksBlock">
                 <h1 className="WhitePageTitle">All Books</h1>
@@ -119,7 +171,7 @@ state = { search: '', sort: 'title' };
                       <SelectBox onUserInput={this.handleChange } 
                              filterText={this.state.search} 
                              sort={this.state.sort} />
-                       <FilteredBookList books={filteredList} />
+                       <FilteredBookList books={filteredList} upvoteHandler={this.incrementUpvote} />
                   </div> 
                   </div>                   
                 </div>
