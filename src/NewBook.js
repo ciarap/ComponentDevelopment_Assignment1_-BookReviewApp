@@ -4,7 +4,7 @@ import request from 'superagent' ;
 
 
 class Form extends React.Component {
-        state = { title: '', author: '',authorImageUrl:'',authorInfo:'',authorWikiUrl:'',imageUrl:'',category:'General',date:'',blurb:''};
+        state = { title: '', author: '',authorImageUrl:'',authorInfo:'',authorWikiUrl:'',imageUrl1:'',imageUrl2:'',imageUrl3:'',imageUrl4:'',category:'General',date:'',blurb:''};
 
         handleTitleChange = (e) => {
             this.setState({title : e.target.value});
@@ -22,8 +22,17 @@ class Form extends React.Component {
         handleAuthorInfoChange = (e) => {
             this.setState({authorInfo: e.target.value});
         };
-           handleImageUrlChange = (e) => {
-            this.setState({imageUrl : e.target.value});
+           handleImageUrl1Change = (e) => {
+            this.setState({imageUrl1 : e.target.value});
+        };
+         handleImageUrl2Change = (e) => {
+            this.setState({imageUrl2 : e.target.value});
+        };
+         handleImageUrl3Change = (e) => {
+            this.setState({imageUrl3 : e.target.value});
+        };
+         handleImageUrl4Change = (e) => {
+            this.setState({imageUrl4 : e.target.value});
         };
 
         handleCategoryChange = (e) => {
@@ -45,33 +54,56 @@ class Form extends React.Component {
             let authorImageUrl = this.state.authorImageUrl.trim();
             let authorWikiUrl = this.state.authorWikiUrl.trim();
             let authorInfo = this.state.authorInfo.trim();
-             let imageUrl = this.state.imageUrl.trim();
+             let imageUrl1 = this.state.imageUrl1.trim();
+              let imageUrl2 = this.state.imageUrl2.trim();
+               let imageUrl3 = this.state.imageUrl3.trim();
+                let imageUrl4 = this.state.imageUrl4.trim();
             let category = this.state.category.trim();
              let date = this.state.date.trim();
             let blurb = this.state.blurb.trim();
-            if (!title || !author || !authorImageUrl || !authorWikiUrl || !authorInfo || !imageUrl || !date || !blurb) {
+            if (!title || !author || !authorImageUrl || !authorWikiUrl || !authorInfo || !imageUrl1 || !date || !blurb) {
                 return;
             }
-            this.props.addBookHandler(title,author,imageUrl,category,date,blurb );
+            this.props.addBookHandler(title,author,imageUrl1,imageUrl2,imageUrl3,imageUrl4,category,date,blurb );
             this.props.addAuthorHandler(author,authorImageUrl,authorInfo,authorWikiUrl);
-            this.setState({ title: '', author: '',authorImageUrl:'',authorInfo:'',authorWikiUrl:'',imageUrl:'',category:'General',date:'',blurb:''});
+            this.setState({ title: '', author: '',authorImageUrl:'',authorInfo:'',authorWikiUrl:'',imageUrl1:'',imageUrl2:'',imageUrl3:'',imageUrl4:'',category:'General',date:'',blurb:''});
         };
 
         render() {
             return (
               <div>
+              
                 <form  style={{marginTop: '30px'}}>
+                <div className="formSection">
+              <h2> Book Info </h2>
                     <div className="form-group">
                         <input type="text"  style={{width:'70%',margin:'auto'}}  className="form-control"
                             placeholder="Title" value={this.state.title}
                             onChange={this.handleTitleChange} ></input>
-                    </div>     
+                    </div> 
+                    <div className="littleFormSection"> 
+                    <h3> Book Images </h3>   
                       <div className="form-group">
                         <input type="text"    style={{width:'70%',margin:'auto'}}className="form-control"
-                            placeholder="Book Image Url" value={this.state.imageUrl}
-                            onChange={this.handleImageUrlChange} ></input>
+                            placeholder="Book Image Url 1" value={this.state.imageUrl1}
+                            onChange={this.handleImageUrl1Change} ></input>
                     </div> 
-                        
+                    <div className="form-group">
+                        <input type="text"    style={{width:'70%',margin:'auto'}}className="form-control"
+                            placeholder="Book Image Url 2" value={this.state.imageUrl2}
+                            onChange={this.handleImageUrl2Change} ></input>
+                    </div> 
+                    <div className="form-group">
+                        <input type="text"    style={{width:'70%',margin:'auto'}}className="form-control"
+                            placeholder="Book Image Url 3" value={this.state.imageUrl3}
+                            onChange={this.handleImageUrl3Change} ></input>
+                    </div> 
+                    <div className="form-group">
+                        <input type="text"    style={{width:'70%',margin:'auto'}}className="form-control"
+                            placeholder="Book Image Url 4" value={this.state.imageUrl4}
+                            onChange={this.handleImageUrl4Change} ></input>
+                    </div> 
+                        </div>
                     <div className="form-group">
                      <select className="form-control"   style={{width:'70%',margin:'auto'}}  value={this.state.category}
                     onChange={this.handleCategoryChange} >
@@ -93,11 +125,13 @@ class Form extends React.Component {
                             onChange={this.handleDateChange} ></input>
                     </div>     
                     <div className="form-group">
-                        <textarea  style={{width:'70%',margin:'auto'}} rows="3" col="3" className="form-control"
+                        <textarea  style={{width:'70%',margin:'auto'}} rows="3" className="form-control"
                             placeholder="Blurb" value={this.state.blurb}
                             onChange={this.handleBlurbChange} ></textarea>
                     </div>
-               
+               </div>
+               <div className="formSection">
+                <h2> Author Info </h2>
                      <div className="form-group">
                         <input type="text"   style={{width:'70%',margin:'auto'}} className="form-control"
                             placeholder="Author" value={this.state.author}
@@ -118,6 +152,7 @@ class Form extends React.Component {
                             placeholder=" Author Info" value={this.state.authorInfo}
                             onChange={this.handleAuthorInfoChange} ></input>
                     </div> 
+                    </div>
                     <div style={{textAlign:'center'}}>
                     <button type="submit" style={{width: '120px', height: '60px'}} className="btn btn-primary"
                         onClick={this.onSubmit}>Submit</button>
@@ -130,7 +165,7 @@ class Form extends React.Component {
 
   class NewBookView extends React.Component {
 
-          addBook = (title,author,imageUrl,category,date,blurb) => {
+          addBook = (title,author,imageUrl1,imageUrl2,imageUrl3,imageUrl4,category,date,blurb) => {
 
             let id=  title.replace(/\s+/g, '-');
             id=id.toLowerCase();
@@ -138,8 +173,20 @@ class Form extends React.Component {
             authorId=authorId.toLowerCase();
 
             date= parseInt(date,10);
-
-            request.post('http://localhost:3000/books/',{"votes":0,"id":id, "authorId":authorId,"title":title, "author":author,"imageUrl":imageUrl, "category":category,"date":date,"blurb":blurb})
+let images=[];
+if(imageUrl1){
+  images.push(imageUrl1);
+}
+if(imageUrl2){
+  images.push(imageUrl2);
+}
+if(imageUrl3){
+  images.push(imageUrl3);
+}
+if(imageUrl4){
+  images.push(imageUrl4);
+}
+            request.post('http://localhost:3000/books/',{"votes":0,"id":id, "authorId":authorId,"title":title, "author":author,"images":images, "category":category,"date":date,"blurb":blurb})
             .end(function(error, res){
                 if (res) {
                   console.log(res);

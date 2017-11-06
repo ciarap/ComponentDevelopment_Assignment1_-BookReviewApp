@@ -61,7 +61,7 @@ class BookListItem extends React.Component {
             <div className="row">
             <div className="col-md-2">
              <Link className="link" to={'/AllBooks/' + this.props.book.id +'/'+this.props.book.authorId}>
-            <img src={"../"+this.props.book.imageUrl} alt= {this.props.book.title} className="thumb"/>
+            <img src={"../"+this.props.book.images[0]} alt= {this.props.book.title} className="thumb"/>
                  </Link>
                  </div>
                   <div className="col-md-7">
@@ -117,7 +117,9 @@ class AllBooks extends React.Component{
                     LocalBookCache.populate(newBooks);
                     newBooks=LocalBookCache.getAll();
 
-               
+               if(newBooks.length!== oldBooks.length){
+                this.setState({});
+               }
                 for(var i=0;i<newBooks.length;i++){
                     if(newBooks[i].votes !== oldBooks[i].votes){
                       this.setState({});

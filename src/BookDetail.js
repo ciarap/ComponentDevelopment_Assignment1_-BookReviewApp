@@ -12,7 +12,7 @@
       render(){
           var mainImage = (
             <div className="book-images">
-              <img src={"/"+this.props.book.imageUrl}  
+              <img src={"/"+this.props.book.images[0]}  
                     alt={this.props.book.title}  className="book"/>
             </div>
             ) ;
@@ -43,6 +43,31 @@
           }
     };
 
+class ImagesSection extends React.Component{
+
+  render(){
+    var thumbImages = this.props.book.images.map(function(img,index) {
+               console.log(img);
+               return (
+                <li key={index}>
+                   <img key={index} src={"/"+img}
+                       alt="missing" />
+
+                </li>
+                ) ;
+              } );
+  
+
+  return (
+    <div>
+
+    <ul className="book-thumbs">
+                       {thumbImages}
+                   </ul>
+                   </div>
+  );
+}
+};
     class AuthorSection extends React.Component { 
       render(){
           var mainImage = (
@@ -181,7 +206,12 @@
                         </div>
                     </div>
                     <BookSection book={book} upvoteHandler={this.incrementUpvote} />
+                     <div className="bookCoverImages">
+                       <h1> Alternative Book Covers </h1>
+                     <ImagesSection book={book}/>
+                     </div>
                     {authorDisplay}
+                   
                     </div>
                     ) ;
           }

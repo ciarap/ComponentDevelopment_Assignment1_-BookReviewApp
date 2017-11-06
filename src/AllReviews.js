@@ -89,7 +89,7 @@ if(book){
     <div className="row">
    <div className="col-md-2" style={{margin:'auto'}}>
              <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>
-            <img src={"../"+book.imageUrl} alt= {book.title} className="thumb"/>
+            <img src={"../"+book.images[0]} alt= {book.title} className="thumb"/>
                  </Link>
                  </div>
                   <div className="col-md-9" style={{paddingTop:'2em'}}>

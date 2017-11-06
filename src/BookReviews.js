@@ -30,16 +30,16 @@ class Form extends React.Component {
 
         render() {
             return (
-                <form  style={{marginTop: '30px'}}>
+                <form  style={{marginTop: '30px', width:'50%',textAlign:'center',margin:'auto'}}>
                     <h3>Add a New Review</h3>
 
                     <div className="form-group">
-                        <input type="text"  className="form-control"
+                        <textarea type="text"  style={{margin:'auto'}} className="form-control" rows="3" 
                             placeholder="Review" value={this.state.opinion}
-                            onChange={this.handleOpinionChange} ></input>
+                            onChange={this.handleOpinionChange} ></textarea>
                     </div>     
                     <div className="form-group">
-                        <input type="text"  className="form-control"
+                        <input type="text" style={{margin:'auto'}} className="form-control"
                             placeholder="Your name" value={this.state.username}
                             onChange={this.handleUsernameChange} ></input>
                     </div>
@@ -100,7 +100,7 @@ class ReviewList extends React.Component {
                 );
             } );
           return (
-                  <div>
+                  <div >
                   <ul className="reviews">
                    {items}
                    </ul>
@@ -122,9 +122,9 @@ class ReviewList extends React.Component {
                     BookCache.setBook(newBook);
                     newBook=BookCache.getBook();
 
-                    if(newBook.reviews.length > oldBook.reviews.length ){
+                    if(newBook.reviews.length !== oldBook.reviews.length ){
                     this.setState({}) ; 
-                }
+                    }
                 else{
                 for(var i=0;i<newBook.reviews.length;i++){
                     if(newBook.reviews[i].upvote !== oldBook.reviews[i].upvote){
