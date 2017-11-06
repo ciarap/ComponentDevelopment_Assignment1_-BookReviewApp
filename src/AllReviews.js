@@ -66,6 +66,14 @@ class AllReviewListItem extends React.Component {
             }.bind(this)); 
 }
 
+handleDelete = () => {
+            this.props.deleteHandler(this.props.review.id);
+        };
+
+         handleVote = () => {
+            this.props.upvoteHandler(this.props.review.id,this.props.review.upvote);
+        };
+
     render() {
       let bookDisplay = (
          <li  style={{border: '1px solid black'}}>
@@ -84,16 +92,18 @@ if(book){
             <img src={"../"+book.imageUrl} alt= {book.title} className="thumb"/>
                  </Link>
                  </div>
-                  <div className="col-md-9">
+                  <div className="col-md-9" style={{paddingTop:'2em'}}>
                  <h4><span  style={{fontWeight:'bold'}}>Book:</span>  <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>{book.title}</Link></h4>
                 <h4><span  style={{fontWeight:'bold'}}> User: </span>{this.props.review.username}</h4>
-                <h4> <span style={{fontWeight:'bold'}}>Votes: </span>{this.props.review.upvote}</h4>
                 <h4> <span  style={{fontWeight:'bold'}}>Review: </span>{this.props.review.opinion}</h4>
                 </div>
-                 <div className="col-md-1" style={{float:'right',textAlign:'right'}}>
+                 <div className="col-md-1" style={{float:'right',textAlign:'right'}} onClick={this.handleDelete} >
                     <button type="delete" className="btn btn-danger"
                         >Delete</button>
                         </div>
+                         <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
+                    <span className="glyphicon glyphicon-thumbs-up"  style={{ cursor: 'pointer',fontSize:'20px' }} onClick={this.handleVote}> {this.props.review.upvote}</span> 
+                    </div>
                         </div>
                 </li>
                 </div>
@@ -111,12 +121,12 @@ class FilteredAllReviewList extends React.Component {
 
       render() {
           var displayedAllReviews = this.props.reviews.map(function(review) {
-            return <AllReviewListItem key={review.id} review={review} /> ;
-          }) ;
+            return <AllReviewListItem key={review.id} review={review} upvoteHandler={this.props.upvoteHandler} deleteHandler={this.props.deleteHandler} /> ;
+          }.bind(this)) ;
           return (
                   <div >
                     <ul className="allReviews">
-                        {displayedAllReviews}
+                        {displayedAllReviews }
                     </ul>
                   </div>
             ) ;
@@ -126,8 +136,6 @@ class FilteredAllReviewList extends React.Component {
 
 class AllReviews extends React.Component{
 componentDidMount() {
-
-
         request.get('http://localhost:3000/reviews')
             .end(function(error, res){
                 if (res) {
@@ -139,10 +147,67 @@ componentDidMount() {
                 }
             }.bind(this)); 
     }
+
+    componentWillUpdate() {
+
+        request.get('http://localhost:3000/reviews')
+            .end(function(error, res){
+                if (res) {
+                    var newReviews = JSON.parse(res.text);
+                    var oldReviews=LocalReviewCache.getAll();
+                    LocalReviewCache.populate(newReviews);
+                    newReviews=LocalReviewCache.getAll();
+
+                    if(newReviews.length !== oldReviews.length ){
+                    this.setState({}) ; 
+                }
+                
+                 else{
+                for(var i=0;i<newReviews.length;i++){
+                    if(newReviews[i].upvote !== oldReviews[i].upvote){
+                      this.setState({});
+                    }
+                }
+              }
+            }else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+
+           
+      };
+
+incrementUpvote = (reviewId,upvote) => {
+             request.patch('http://localhost:3000/reviews/'+reviewId,{"upvote": upvote+1})
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
+
 state = {  sort: 'bookId' };
+
       handleChange = ( value) => {
             this.setState( { sort: value } ) ;
     };
+
+     deleteReview = (reviewId) => {
+             request.delete('http://localhost:3000/reviews/'+reviewId)
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
           render(){
                 let list = LocalReviewCache.getAll();
                 let filteredAllReviewList = _.sortBy(list, this.state.sort) ;
@@ -158,7 +223,7 @@ state = {  sort: 'bookId' };
                    <div className="row">
                       <SelectBox onUserInput={this.handleChange } 
                              sort={this.state.sort} />
-                       <FilteredAllReviewList reviews={filteredAllReviewList} />
+                       <FilteredAllReviewList reviews={filteredAllReviewList} upvoteHandler={this.incrementUpvote} deleteHandler={this.deleteReview} />
                   </div> 
                   </div>                   
                 </div>

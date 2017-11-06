@@ -54,6 +54,10 @@ class ReviewListItem extends React.Component {
    handleVote = () => {
             this.props.upvoteHandler(this.props.review.id,this.props.review.upvote);
         };
+         handleDelete = () => {
+            this.props.deleteHandler(this.props.review.id);
+        };
+
     render() {
        let lineStyle = {
                 fontSize: '20px', margin: '10px'  };
@@ -66,7 +70,7 @@ class ReviewListItem extends React.Component {
                         {this.props.review.opinion}
                     </span>
                     </div>
-                    <div className="col-md-1" style={{float:'right',textAlign:'right'}}>
+                    <div className="col-md-1" style={{float:'right',textAlign:'right'}} onClick={this.handleDelete}>
                     <button type="delete" className="btn btn-danger"
                         >Delete</button>
                         </div>
@@ -92,7 +96,7 @@ class ReviewList extends React.Component {
       render() {
         let items = this.props.reviews.map((review,index) => {
                 return (
-                    <ReviewListItem key={index} review={review}  upvoteHandler={this.props.upvoteHandler}  />
+                    <ReviewListItem key={index} review={review}  upvoteHandler={this.props.upvoteHandler} deleteHandler={this.props.deleteHandler}  />
                 );
             } );
           return (
@@ -165,6 +169,18 @@ class ReviewList extends React.Component {
             }.bind(this)); 
           };
 
+          deleteReview = (reviewId) => {
+             request.delete('http://localhost:3000/reviews/'+reviewId)
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
 
           addReview = (opinion,username) => {
             request.post('http://localhost:3000/reviews/',{"opinion":opinion, "bookId":this.props.params.id,"username":username, "upvote":0})
@@ -211,7 +227,7 @@ class ReviewList extends React.Component {
                 <div className="view-frame">
                    <div className="container-fluid">
                    <div className="row">
-                    <ReviewList reviews={reviews} upvoteHandler={this.incrementUpvote}/>
+                    <ReviewList reviews={reviews} upvoteHandler={this.incrementUpvote} deleteHandler={this.deleteReview}/>
                      
                   </div> 
                   </div>                   

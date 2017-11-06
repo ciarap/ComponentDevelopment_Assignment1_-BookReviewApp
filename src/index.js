@@ -9,7 +9,7 @@ import React from 'react';
     import BookDetail from './BookDetail';
     import BookReviews from './BookReviews';
     import AllReviews from './AllReviews';
-    import AddBook from './AddBook';
+    import NewBook from './NewBook';
     import PopularBooks from './PopularBooks';
 
 
@@ -25,7 +25,7 @@ var NavigationBar = React.createClass({
     <NavItem  className="navItem " href="/AllBooks">All Books</NavItem>
      <NavItem className="navItem" href="/AllReviews">All Reviews</NavItem>
     <NavItem className="navItem" href="/PopularBooks">Popular Books</NavItem>
-     <NavItem className="navItem" href="/AddBook">Add Book</NavItem>
+     <NavItem className="navItem" href="/NewBook">Add Book</NavItem>
    
       </Nav >
       </Navbar>
@@ -55,7 +55,7 @@ var App = React.createClass({
                  <Route path="AllBooks/:id/:authorId/BookReviews" component={BookReviews} />
                 <Route path="AllBooks/:id/:authorId" component={BookDetail} />
                 <Route path="/AllReviews" component={AllReviews}/>
-                 <Route path="/AddBook" component={AddBook}/>
+                 <Route path="/NewBook" component={NewBook}/>
                  <Route path="/PopularBooks" component={PopularBooks}/>
                
                 </Route>

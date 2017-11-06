@@ -49,6 +49,11 @@ class BookListItem extends React.Component {
     handleVote = () => {
             this.props.upvoteHandler(this.props.book.id,this.props.book.votes);
         };
+
+         handleDelete = () => {
+            this.props.deleteHandler(this.props.book.id);
+        };
+
     render() {
         return (
             <li className="thumbnail book-listing">
@@ -67,7 +72,7 @@ class BookListItem extends React.Component {
                 <h4> Category: {this.props.book.category}</h4>
                  <h4> Publish Date: {this.props.book.date}</h4>
              </div>
-                  <div className="col-md-3" style={{float:'right',textAlign:'right'}}>
+                  <div className="col-md-3" style={{float:'right',textAlign:'right'}} onClick={this.handleDelete}>
                     <button type="delete" className="btn btn-danger"
                         >Delete</button>
                         </div>
@@ -87,7 +92,7 @@ class BookListItem extends React.Component {
 class FilteredBookList extends React.Component {
       render() {
           var displayedBooks = this.props.books.map(function(book) {
-            return <BookListItem key={book.id} book={book}  upvoteHandler={this.props.upvoteHandler} /> ;
+            return <BookListItem key={book.id} book={book}  upvoteHandler={this.props.upvoteHandler}  deleteHandler={this.props.deleteHandler} /> ;
           }.bind(this)) ;
           return (
                   <div className="col-md-10">
@@ -140,7 +145,7 @@ componentDidMount() {
                 }
             }.bind(this)); 
     }
-state = { search: '', sort: 'title' };
+state = { search: '', sort: 'title',  };
       handleChange = (type, value) => {
         if ( type === 'search' ) {
             this.setState( { search: value } ) ;
@@ -161,11 +166,24 @@ state = { search: '', sort: 'title' };
             }.bind(this)); 
           };
 
+           deleteBook = (bookId) => {
+             request.delete('http://localhost:3000/books/'+bookId)
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
           render(){
                 let list = LocalBookCache.getAll().filter( (p) => {
                     return p.title.toLowerCase().search(
                         this.state.search.toLowerCase() ) !== -1 ;
                 } );
+                
                 let filteredList = _.sortBy(list, this.state.sort) ;
                 if(this.state.sort==="votes" || this.state.sort==="date"){
                   filteredList=filteredList.reverse();
@@ -180,7 +198,7 @@ state = { search: '', sort: 'title' };
                       <SelectBox onUserInput={this.handleChange } 
                              filterText={this.state.search} 
                              sort={this.state.sort} />
-                       <FilteredBookList books={filteredList} upvoteHandler={this.incrementUpvote} />
+                       <FilteredBookList books={filteredList} upvoteHandler={this.incrementUpvote}  deleteHandler={this.deleteBook} />
                   </div> 
                   </div>                   
                 </div>

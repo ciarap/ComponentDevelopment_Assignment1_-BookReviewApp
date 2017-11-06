@@ -128,7 +128,7 @@ class Form extends React.Component {
         }
     }
 
-  class AddBookView extends React.Component {
+  class NewBookView extends React.Component {
 
           addBook = (title,author,imageUrl,category,date,blurb) => {
 
@@ -196,4 +196,4 @@ class Form extends React.Component {
 
 
  
-    export default AddBookView;
+    export default NewBookView;

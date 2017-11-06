@@ -6,6 +6,9 @@
    
 
    class BookSection extends React.Component { 
+    handleVote = () => {
+            this.props.upvoteHandler(this.props.book.id,this.props.book.votes);
+        };
       render(){
           var mainImage = (
             <div className="book-images">
@@ -24,7 +27,7 @@
                    <h1>About</h1>
                    </div>
                    <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
-                    <span className="glyphicon glyphicon-heart "  style={{ color: 'red',fontSize:'50px' }}>  {this.props.book.votes}</span> 
+                    <span className="glyphicon glyphicon-heart "  style={{ color: 'red',cursor: 'pointer',fontSize:'50px' }} onClick={this.handleVote}>  {this.props.book.votes}</span> 
                    
 
                    </div>
@@ -105,6 +108,42 @@
                 }
             }.bind(this)); 
       } 
+
+      componentWillUpdate() {
+
+        request.get('http://localhost:3000/books/'+this.props.params.id)
+            .end(function(error, res){
+                if (res) {
+                    var newBook = JSON.parse(res.text);
+                    var oldBook=BookCache.getBook();
+                    BookCache.setBook(newBook);
+                    newBook=BookCache.getBook();
+
+                    if(newBook.votes !== oldBook.votes){
+                      this.setState({});
+                }
+              }
+                 else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+
+           
+      };
+
+
+       incrementUpvote = (bookId,votes) => {
+             request.patch('http://localhost:3000/books/'+bookId,{"votes": votes+1})
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
       render(){
 
           let bookDisplay = <p>No book details + {this.props.params.id}</p> ; 
@@ -141,7 +180,7 @@
                         </Link> 
                         </div>
                     </div>
-                    <BookSection book={book} />
+                    <BookSection book={book} upvoteHandler={this.incrementUpvote} />
                     {authorDisplay}
                     </div>
                     ) ;
