@@ -59,6 +59,7 @@ Install npm, json server, create react app, bootstrap, lodash, react router, sup
 $ npm install
 $ npm install -g create-react-app
 $ npm install  bootstrap@3.3.6  --save
+$ npm install --save react-bootstrap
 $ npm install -g json-server
 $ npm install  lodash@2.4.2 --save
 $ npm install react-router@2.6.1  --save
@@ -99,7 +100,7 @@ Reviews
 
 ## App Component Design.
 
- . . . A diagram showing the app's hierarchical component design (see example below) . . . .  
+![][image20] 
 
 
 
@@ -233,4 +234,5 @@ To link up reviews to book objects, I researched querying with HTTP requests. I 
 [image17]: ./views_screenshots/NewBook3.PNG
 [image18]: ./views_screenshots/PopularBooks1.PNG
 [image19]: ./views_screenshots/NavBar_Hover.PNG
+[image20]: ./views_screenshots/ComponentHierarchy.PNG
 
