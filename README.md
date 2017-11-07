@@ -234,5 +234,5 @@ To link up reviews to book objects, I researched querying with HTTP requests. I 
 [image17]: ./views_screenshots/NewBook3.PNG
 [image18]: ./views_screenshots/PopularBooks1.PNG
 [image19]: ./views_screenshots/NavBar_Hover.PNG
-[image20]: ./views_screenshots/ComponentHierarchy.PNG
+[image20]: ./views_screenshots/ComponentHierarchy.png
 
