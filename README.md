@@ -55,7 +55,7 @@ Clone the project and direct cmd into the base folder.
 
 Install npm, json server, create react app, bootstrap, lodash, react router, superagent  :
 
-''' 
+```
 
 $ npm install
 $ npm install -g create-react-app
@@ -65,20 +65,19 @@ $ npm install  lodash@2.4.2 --save
 $ npm install react-router@2.6.1  --save
 $ npm install  superagent@1.6.1 --save
 
-'''
+```
 
 Run the server from the project base folder in a cmd window :
-'''
+```
 $ json-server ./data.json
-'''
+```
 
 In another cmd window, run the app:
-'''
+```
 $ npm start
-'''
+```
 
-
-
+The server should be running on localhost 3000, and the SPA on localhost 3001. 
 
 
 ## Data Model Design.
