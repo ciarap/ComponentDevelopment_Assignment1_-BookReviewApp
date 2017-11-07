@@ -186,18 +186,31 @@ View 1:
 
 
 ## Routing.
-. . . . List each route supported by the app and state the associated view . . . . . (see examples below)
 
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ / - displays the Homepage
++ /AllBooks - displays all books in database
++ /AllBooks/:id/:authorId - detail view of a particular book (:id) and its author (:authorId)
++ /AllBooks/:id/:authorid/BookReviews - displays all reviews for a particular book (:id) 
++ /AllReviews - displays all reviews in database
++ /NewBook - displays the Add Book page 
++ /PopularBooks - displays the top 5 most rated books 
 
 ## Extra features
-. . . . . Briefly explain any non-standard features, functional or non-functional, developed for the app . . . . . .  
+
++ Used google fonts.
++ Used NavBar Nav and NavItem from the react-router package to develop a navigation bar.
++ Modified bootstrap style presets by creating a style.css file.
++ Query used in HTTP GET requests which linked up review objects to certain book object.
 
 ## Independent learning.
-. . . . . State the non-standard aspects of React (or other related technologies) that you researched and applied in this assignment . . . . .  
+
+In order to create the navigation bar, I had to research using NavBar from react-bootstrap. There are many ways to use this feature, bt I found using the Nav and NavItem elements within it worked best.
+
+As I chose to use a JSON server, and had only used an example of a GET request before, I researched the other types of requests (DELETE, PATCH, POST) and their uses for a json server. 
+
+When creating the json file to act as the database, I was originally planning on having the reviews as a nested collection within the book objects. However, after researching the use of nested collections and modifying data by update, I found that to implement the Upvote feature on a review, which updates an attribute of the review object in question, I had to remove the reviews as nested collections and create them in a array of their own. This is due to the fact that only one level of children elements can be accessed and modified, so modifying a child's child ( review's upvote attribute) was not possible. 
+
+To link up reviews to book objects, I researched querying with HTTP requests. I found that using the embed query worked to link them, as long as i had a bookId attribute in the review object, which corresponds to a book object id. 
 
 
 [image1]: ./views_screenshots/books.PNG
