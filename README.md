@@ -46,11 +46,10 @@ The following list of software was used to develop the app:
 + JSON server
 + Lodash
 + Superagent
+ 
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start the app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
-The following steps must be undertaken to successfully clone and run the project: 
+### Cloning and Running Project : Steps
 
-### Cloning Project : Steps
 Clone the project and direct cmd into the base folder. 
 
 Install npm, json server, create react app, bootstrap, lodash, react router, superagent  :
@@ -78,24 +77,53 @@ $ npm start
 ```
 
 The server should be running on localhost 3000, and the SPA on localhost 3001. 
+Both can be accessed through an internet browser , e.g Google Chrome.
 
 
 ## Data Model Design.
 
-. . . . . Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent). Always use meaningful sample data . . . . 
+This json server includes three entities : Books, Authors and Reviews.
 
+Books
 ![][image1]
+
+Authors
+![][image2]
+
+Reviews
+![][image3]
+
 
 ## App Component Design.
 
  . . . A diagram showing the app's hierarchical component design (see example below) . . . .  
 
-![][image2]
+
 
 ## UI Design.
-. . . . . Screenshots of app's views (see example below) with appropriate captions . . . . . . . 
 
-![][image3]
+### HomePage
+
+![][image4]
+
+### All Books
+View:
+![][image5]
+
+Sorting bar:
+![][image6]
+
+### All Reviews
+
+View (first half):
+![][image7]
+View (second half):
+![][image8]
+Sorting bar:
+![][image9]
+
+
+
 
 ## Routing.
 . . . . List each route supported by the app and state the associated view . . . . . (see examples below)
@@ -112,6 +140,14 @@ The server should be running on localhost 3000, and the SPA on localhost 3001.
 . . . . . State the non-standard aspects of React (or other related technologies) that you researched and applied in this assignment . . . . .  
 
 
-[image1]: ./model.png
-[image2]: ./design.jpg
-[image3]: ./screen.png
+[image1]: ./views_screenshots/books.png
+[image2]: ./views_screenshots/authors.png
+[image3]: ./views_screenshots/reviews.png
+
+[image4]: ./views_screenshots/homepage.png
+[image5]: ./views_screenshots/allbooks1.png
+[image6]: ./views_screenshots/allbooks2.png
+[image7]: ./views_screenshots/allreviews1.png
+[image8]: ./views_screenshots/allreviews2.png
+[image9]: ./views_screenshots/allreviews3.png
+
