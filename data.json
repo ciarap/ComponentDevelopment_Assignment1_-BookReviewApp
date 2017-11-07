@@ -58,7 +58,7 @@
       "authorId": "jk-rowling",
       "category": "Fantasy",
       "date": 1998,
-      "votes": 24,
+      "votes": 26,
       "images": [
         "./img/harrypotter_ChamberOfSecrets.jpg",
         "./img/harrypotter_ChamberOfSecrets2.jpg",
@@ -174,13 +174,6 @@
       "bookId": "the-book-thief",
       "username": "joe",
       "id": 7,
-      "upvote": 2
-    },
-    {
-      "opinion": "Graaand",
-      "bookId": "the-book-thief",
-      "username": "ian",
-      "id": 12,
       "upvote": 2
     },
     {

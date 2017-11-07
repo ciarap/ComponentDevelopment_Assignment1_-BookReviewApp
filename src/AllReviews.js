@@ -1,19 +1,21 @@
+// Author: Ciara Power 20072488
+
 import React from 'react';
 import LocalReviewCache from './LocalReviewCache';
 import _ from 'lodash';
- import { Link } from 'react-router'; 
-  import BookCache from './BookCache';
+import { Link } from 'react-router'; 
+import BookCache from './BookCache';
 
 var request = require('superagent') ;
 
-class SelectBox extends React.Component {
-    handleChange = (e,  value) => {
+class SelectBox extends React.Component {     
+    handleChange = (e,  value) => {    // handles change after sort value changes
         e.preventDefault();
         this.props.onUserInput( value);
     };
 
 
-    handleSortChange = (e) => {
+    handleSortChange = (e) => {   //sort value changes
         this.handleChange(e,  e.target.value);
     };
 
@@ -33,11 +35,12 @@ class SelectBox extends React.Component {
   }
 
 
-class AllReviewListItem extends React.Component {
+class AllReviewListItem extends React.Component {    // each review item in list 
  state = {};
-  componentDidMount() {
 
-  request.get('http://localhost:3000/books/'+this.props.review.bookId)
+  componentDidMount() {       // after mounted first 
+
+  request.get('http://localhost:3000/books/'+this.props.review.bookId)    // gets book related to the review being listed (READ)
             .end(function(error, res){
                 if (res) {
                     var book = JSON.parse(res.text);
@@ -49,66 +52,67 @@ class AllReviewListItem extends React.Component {
             }.bind(this)); 
 }
 
- componentWillReceiveProps(nextProps) {
+ componentWillReceiveProps(nextProps) {      // change to state
 
-  request.get('http://localhost:3000/books/'+this.props.review.bookId)
+    request.get('http://localhost:3000/books/'+this.props.review.bookId)   //gets book related to review in question after changes occur
             .end(function(error, res){
                 if (res) {
                     var newBook = JSON.parse(res.text);
                     BookCache.setBook(newBook);
                     
-                    if(newBook.id!==nextProps){
+                    if(newBook.id!==nextProps){    // if the id of the  book currently in item position doesnt equal the id it should have nextProps , then set state to update
                       this.setState({});
                     }
                 } else {
                     console.log(error );
                 }
             }.bind(this)); 
-}
+     }
 
-handleDelete = () => {
+        handleDelete = () => {    // delete review handler
             this.props.deleteHandler(this.props.review.id);
         };
 
-         handleVote = () => {
+         handleVote = () => {   // upvote review 
             this.props.upvoteHandler(this.props.review.id,this.props.review.upvote);
         };
 
     render() {
       let bookDisplay = (
          <li  style={{border: '1px solid black'}}>
-            <p>No book details + {this.props.review.bookId}</p>
+            <p>No book details + {this.props.review.bookId}</p>   {/*default incase no book object found later*/}
             </li> )
 
       let book= BookCache.getBook();
 
-if(book){
+if(book){    {/* book object found */}
   bookDisplay=(
     <div>
     <li style={{border: '1px solid black'}} >
     <div className="row">
    <div className="col-md-2" style={{margin:'auto'}}>
-             <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>
+             <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>   {/*link to book details*/}
             <img src={"../"+book.images[0]} alt= {book.title} className="thumb"/>
                  </Link>
                  </div>
                   <div className="col-md-9" style={{paddingTop:'2em'}}>
-                 <h4><span  style={{fontWeight:'bold'}}>Book:</span>  <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>{book.title}</Link></h4>
+                 <h4><span  style={{fontWeight:'bold'}}>Book:</span>  
+                        <Link className="link" to={'/AllBooks/' + book.id +'/'+book.authorId}>{book.title}</Link></h4>  {/*link to book details*/}
                 <h4><span  style={{fontWeight:'bold'}}> User: </span>{this.props.review.username}</h4>
                 <h4> <span  style={{fontWeight:'bold'}}>Review: </span>{this.props.review.opinion}</h4>
                 </div>
-                 <div className="col-md-1" style={{float:'right',textAlign:'right'}} onClick={this.handleDelete} >
-                    <button type="delete" className="btn btn-danger"
+                 <div className="col-md-1" style={{float:'right',textAlign:'right'}}  >   {/* Delete button */}
+                    <button type="delete" onClick={this.handleDelete} className="btn btn-danger"
                         >Delete</button>
                         </div>
-                         <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
-                    <span className="glyphicon glyphicon-thumbs-up"  style={{ cursor: 'pointer',fontSize:'20px' }} onClick={this.handleVote}> {this.props.review.upvote}</span> 
+                         <div className="col-md-2" style={{float:'right',textAlign:'right'}}>    
+                    <span className="glyphicon glyphicon-thumbs-up"  style={{ cursor: 'pointer',fontSize:'20px' }} onClick={this.handleVote}> {this.props.review.upvote}</span> {/* Vote Button */}
                     </div>
-                        </div>
+                  </div>
                 </li>
                 </div>
-  )
-}
+      )
+    }
         return (
              <span>{bookDisplay}</span>
         );
@@ -116,11 +120,10 @@ if(book){
 }
 
 
-class FilteredAllReviewList extends React.Component {
-
+class FilteredAllReviewList extends React.Component {  // whole list of filtered reviews
 
       render() {
-          var displayedAllReviews = this.props.reviews.map(function(review) {
+          var displayedAllReviews = this.props.reviews.map(function(review) {  {/* To deal with one review from list at a time */}
             return <AllReviewListItem key={review.id} review={review} upvoteHandler={this.props.upvoteHandler} deleteHandler={this.props.deleteHandler} /> ;
           }.bind(this)) ;
           return (
@@ -134,9 +137,10 @@ class FilteredAllReviewList extends React.Component {
     }
 
 
-class AllReviews extends React.Component{
-componentDidMount() {
-        request.get('http://localhost:3000/reviews')
+class AllReviews extends React.Component{    // whole page 
+
+componentDidMount() { //after mounted
+        request.get('http://localhost:3000/reviews') //get all reviews in server (READ)
             .end(function(error, res){
                 if (res) {
                     var reviews = JSON.parse(res.text);
@@ -148,22 +152,23 @@ componentDidMount() {
             }.bind(this)); 
     }
 
-    componentWillUpdate() {
 
-        request.get('http://localhost:3000/reviews')
+    componentWillUpdate() {  //before update occurs
+
+        request.get('http://localhost:3000/reviews')   //get all reviews (READ)
             .end(function(error, res){
                 if (res) {
-                    var newReviews = JSON.parse(res.text);
-                    var oldReviews=LocalReviewCache.getAll();
+                    var newReviews = JSON.parse(res.text);    // updated list from server
+                    var oldReviews=LocalReviewCache.getAll();   // current reviews list
                     LocalReviewCache.populate(newReviews);
                     newReviews=LocalReviewCache.getAll();
 
-                    if(newReviews.length !== oldReviews.length ){
+                    if(newReviews.length !== oldReviews.length ){    // if lists differ in size - change occured, set state to update view
                     this.setState({}) ; 
                 }
                 
-                 else{
-                for(var i=0;i<newReviews.length;i++){
+                else{
+                for(var i=0;i<newReviews.length;i++){    // for each review, check if votes are same for old and new list - if not then upvote occured so update view
                     if(newReviews[i].upvote !== oldReviews[i].upvote){
                       this.setState({});
                     }
@@ -173,12 +178,12 @@ componentDidMount() {
                     console.log(error );
                 }
             }.bind(this)); 
-
-           
       };
 
-incrementUpvote = (reviewId,upvote) => {
-             request.patch('http://localhost:3000/reviews/'+reviewId,{"upvote": upvote+1})
+
+incrementUpvote = (reviewId,upvote) => {   //revire upvoted
+
+             request.patch('http://localhost:3000/reviews/'+reviewId,{"upvote": upvote+1}) // update the upvote attribute of relevant review (UPDATE)
             .end(function(error, res){
                 if (res) {
                   console.log(res);
@@ -190,14 +195,15 @@ incrementUpvote = (reviewId,upvote) => {
           };
 
 
-state = {  sort: 'bookId' };
+state = {  sort: 'bookId' };  // state sort value default set to sort by bookId
 
-      handleChange = ( value) => {
+      handleChange = ( value) => {   // handle sort value change
             this.setState( { sort: value } ) ;
     };
 
-     deleteReview = (reviewId) => {
-             request.delete('http://localhost:3000/reviews/'+reviewId)
+     deleteReview = (reviewId) => {     // delete review
+
+             request.delete('http://localhost:3000/reviews/'+reviewId)  // delete a review from server file (DELETE)
             .end(function(error, res){
                 if (res) {
                   console.log(res);
@@ -210,10 +216,12 @@ state = {  sort: 'bookId' };
 
           render(){
                 let list = LocalReviewCache.getAll();
-                let filteredAllReviewList = _.sortBy(list, this.state.sort) ;
-                if(this.state.sort==="upvote"){
+                let filteredAllReviewList = _.sortBy(list, this.state.sort) ;    {/* Sort list of reviews */}
+                if(this.state.sort==="upvote"){  {/* if sorting by upvotes, want high to low (default is low to high) so reverse */} 
                   filteredAllReviewList=filteredAllReviewList.reverse();
                 }
+                
+
            return (
            <div className="allReviewsBlock">
                 <h1 className="BlackPageTitle">All Reviews</h1>
@@ -231,12 +239,6 @@ state = {  sort: 'bookId' };
               </div>
          );
     }
-
-
-   
-
 }
-
-
 
 export default AllReviews;

@@ -1,3 +1,5 @@
+// Author: Ciara Power 20072488
+
 import React from 'react';
 import LocalBookCache from './LocalBookCache';
 import _ from 'lodash';
@@ -8,9 +10,10 @@ var request = require('superagent') ;
 
 class PopularBookListItem extends React.Component {
  state = {};
-  componentDidMount() {
 
-  request.get('http://localhost:3000/books/'+this.props.book.id)
+  componentDidMount() {  // mounted at first
+
+  request.get('http://localhost:3000/books/'+this.props.book.id)  // get book from server (READ)
             .end(function(error, res){
                 if (res) {
                     var book = JSON.parse(res.text);
@@ -63,9 +66,9 @@ if(book){
 }
 
 
-class FilteredPopularBooksList extends React.Component {
+class FilteredPopularBooksList extends React.Component {   // list of popular books 
       render() {
-          var displayedPopularBooks = this.props.books.map(function(book) {
+          var displayedPopularBooks = this.props.books.map(function(book) {  // deal with one book at a time
             return <PopularBookListItem key={book.id} book={book} /> ;
           }) ;
           return (
@@ -81,7 +84,7 @@ class FilteredPopularBooksList extends React.Component {
 
 class PopularBooks extends React.Component{
 componentDidMount() {
-        request.get('http://localhost:3000/books')
+        request.get('http://localhost:3000/books')  // get all books (READ)
             .end(function(error, res){
                 if (res) {
                     var books = JSON.parse(res.text);
@@ -94,9 +97,9 @@ componentDidMount() {
     }
           render(){
                 let list = LocalBookCache.getAll();
-                let filteredPopularBooksList = _.sortBy(list, 'votes') ;
-                filteredPopularBooksList=filteredPopularBooksList.reverse();
-                filteredPopularBooksList=filteredPopularBooksList.slice(0,5);
+                let filteredPopularBooksList = _.sortBy(list, 'votes') ;  {/* sort the list by votes */}
+                filteredPopularBooksList=filteredPopularBooksList.reverse(); {/* reverse to get highest votes at top */}
+                filteredPopularBooksList=filteredPopularBooksList.slice(0,5);  {/* only want top 5 */}
            return (
            <div className="popularBooksBlock">
                 <h1 className="BlackPageTitle">Top 5 Popular Books</h1>
@@ -113,11 +116,6 @@ componentDidMount() {
          );
     }
 
-
-   
-
 }
-
-
 
 export default PopularBooks;

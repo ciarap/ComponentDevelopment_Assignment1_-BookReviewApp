@@ -1,3 +1,5 @@
+// Author: Ciara Power 20072488
+
 import React from 'react';
 import BookCache from './BookCache';
 import request from 'superagent' ;
@@ -6,22 +8,22 @@ import request from 'superagent' ;
  
 
 
-class Form extends React.Component {
+class Form extends React.Component {   // form component to add a review
         state = { opinion: '', username: ''};
 
-        handleOpinionChange = (e) => {
+        handleOpinionChange = (e) => {  // when opinion text box changes
             this.setState({opinion : e.target.value});
         };
 
-        handleUsernameChange = (e) => {
+        handleUsernameChange = (e) => {  // when username textbox changes
             this.setState({username: e.target.value});
         };
 
-        onSubmit = (e) => {
+        onSubmit = (e) => {  // when submit button pressed
             e.preventDefault();
-            let opinion = this.state.opinion.trim();
+            let opinion = this.state.opinion.trim();    // trim any leading and trailing spaces 
             let username = this.state.username.trim();
-            if (!opinion ) {
+            if (!opinion || !username ) {
                 return;
             }
             this.props.reviewHandler(opinion,username );
@@ -34,27 +36,30 @@ class Form extends React.Component {
                     <h3>Add a New Review</h3>
 
                     <div className="form-group">
-                        <textarea type="text"  style={{margin:'auto'}} className="form-control" rows="3" 
+                        <textarea type="text"  style={{margin:'auto'}} className="form-control" rows="3"   
                             placeholder="Review" value={this.state.opinion}
-                            onChange={this.handleOpinionChange} ></textarea>
+                            onChange={this.handleOpinionChange} ></textarea>  {/* larger text input area for opinion */} 
                     </div>     
                     <div className="form-group">
                         <input type="text" style={{margin:'auto'}} className="form-control"
                             placeholder="Your name" value={this.state.username}
                             onChange={this.handleUsernameChange} ></input>
                     </div>
-                    <button type="submit" className="btn btn-primary"
-                        onClick={this.onSubmit}>Submit</button>
+                    <button type="submit" className="btn btn-primary"   
+                        onClick={this.onSubmit}>Submit</button> {/* submit button to commit review */}
                 </form>
             );
         }
     }
-class ReviewListItem extends React.Component {
 
-   handleVote = () => {
+
+class ReviewListItem extends React.Component {   // each review in list
+
+   handleVote = () => {  //review upvote
             this.props.upvoteHandler(this.props.review.id,this.props.review.upvote);
         };
-         handleDelete = () => {
+
+    handleDelete = () => {   // delete review
             this.props.deleteHandler(this.props.review.id);
         };
 
@@ -67,10 +72,10 @@ class ReviewListItem extends React.Component {
                 <div className="row" style={lineStyle}>
                  <div className="col-md-11">
                 <span style={lineStyle} >
-                        {this.props.review.opinion}
+                        {this.props.review.opinion}     
                     </span>
                     </div>
-                    <div className="col-md-1" style={{float:'right',textAlign:'right'}} onClick={this.handleDelete}>
+                    <div className="col-md-1" style={{float:'right',textAlign:'right'}} onClick={this.handleDelete}>  {/* delete review button */}
                     <button type="delete" className="btn btn-danger"
                         >Delete</button>
                         </div>
@@ -82,7 +87,7 @@ class ReviewListItem extends React.Component {
                      Written by {this.props.review.username}
                      </div>
                       <div className="col-md-2" style={{float:'right',textAlign:'right'}}>
-                    <span className="glyphicon glyphicon-thumbs-up"  style={{ cursor: 'pointer',fontSize:'20px' }} onClick={this.handleVote}> {this.props.review.upvote}</span> 
+                    <span className="glyphicon glyphicon-thumbs-up"  style={{ cursor: 'pointer',fontSize:'20px' }} onClick={this.handleVote}> {this.props.review.upvote}</span> {/* votes for review icon button */}
                     </div>
                     </div>
                     </li>
@@ -94,7 +99,7 @@ class ReviewListItem extends React.Component {
 
 class ReviewList extends React.Component {
       render() {
-        let items = this.props.reviews.map((review,index) => {
+        let items = this.props.reviews.map((review,index) => {  // to deal with each review seperately from list 
                 return (
                     <ReviewListItem key={index} review={review}  upvoteHandler={this.props.upvoteHandler} deleteHandler={this.props.deleteHandler}  />
                 );
@@ -110,11 +115,12 @@ class ReviewList extends React.Component {
     }
 
 
-  class BookReviews extends React.Component {
+  class BookReviews extends React.Component {   
 
-       componentWillUpdate() {
+       componentWillUpdate() {   // before update
 
-        request.get('http://localhost:3000/books/'+this.props.params.id+'?_embed=reviews')
+        request.get('http://localhost:3000/books/'+this.props.params.id+'?_embed=reviews')   // (READ) gets book from server and gets reviews from server that have the relevant bookId attribute value to the book in question
+                                                                                            // this for all purposes returns the book object with a nested collection within of the reviews matching the book
             .end(function(error, res){
                 if (res) {
                     var newBook = JSON.parse(res.text);
@@ -122,11 +128,11 @@ class ReviewList extends React.Component {
                     BookCache.setBook(newBook);
                     newBook=BookCache.getBook();
 
-                    if(newBook.reviews.length !== oldBook.reviews.length ){
+                    if(newBook.reviews.length !== oldBook.reviews.length ){   // if the amount of reviews for books differ, change occurred so update necessary
                     this.setState({}) ; 
                     }
                 else{
-                for(var i=0;i<newBook.reviews.length;i++){
+                for(var i=0;i<newBook.reviews.length;i++){   // if the upvotes of review in one book doesnt match the corresponding review upvotes in other book, update needed
                     if(newBook.reviews[i].upvote !== oldBook.reviews[i].upvote){
                       this.setState({});
                     }
@@ -141,8 +147,10 @@ class ReviewList extends React.Component {
       };
 
 
-      componentDidMount() {
-        request.get('http://localhost:3000/books/'+this.props.params.id+'?_embed=reviews')
+      componentDidMount() {  // initial component mpunted
+        request.get('http://localhost:3000/books/'+this.props.params.id+'?_embed=reviews')  // (READ) gets book from server and gets reviews from server that have the relevant bookId attribute value to the book in question
+                                                                                            // this for all purposes returns the book object with a nested collection within of the reviews matching the book
+
             .end(function(error, res){
                 if (res) {
                     var book = JSON.parse(res.text);
@@ -157,20 +165,8 @@ class ReviewList extends React.Component {
       };
 
 
- incrementUpvote = (reviewId,upvote) => {
-             request.patch('http://localhost:3000/reviews/'+reviewId,{"upvote": upvote+1})
-            .end(function(error, res){
-                if (res) {
-                  console.log(res);
-                  this.setState({}) ; 
-                } else {
-                    console.log(error );
-                }
-            }.bind(this)); 
-          };
-
-          deleteReview = (reviewId) => {
-             request.delete('http://localhost:3000/reviews/'+reviewId)
+ incrementUpvote = (reviewId,upvote) => { // when review is voted for
+             request.patch('http://localhost:3000/reviews/'+reviewId,{"upvote": upvote+1}) // updates the upvote attribute in the relevant review (UPDATE)
             .end(function(error, res){
                 if (res) {
                   console.log(res);
@@ -182,8 +178,21 @@ class ReviewList extends React.Component {
           };
 
 
-          addReview = (opinion,username) => {
-            request.post('http://localhost:3000/reviews/',{"opinion":opinion, "bookId":this.props.params.id,"username":username, "upvote":0})
+          deleteReview = (reviewId) => {  // to delete a review
+             request.delete('http://localhost:3000/reviews/'+reviewId)  // deletes review from server (DELETE)
+            .end(function(error, res){
+                if (res) {
+                  console.log(res);
+                  this.setState({}) ; 
+                } else {
+                    console.log(error );
+                }
+            }.bind(this)); 
+          };
+
+
+          addReview = (opinion,username) => {   // to add a review 
+            request.post('http://localhost:3000/reviews/',{"opinion":opinion, "bookId":this.props.params.id,"username":username, "upvote":0})  // adds review to server , passing all atttribute values  (CREATE)
             .end(function(error, res){
                 if (res) {
                   console.log(res);
@@ -197,11 +206,12 @@ class ReviewList extends React.Component {
       render(){
                
           let formDisplay=<p> No Form</p>;
+
           let reviewDisplay = <p>No book + {this.props.params.id}</p> ; 
           let book= BookCache.getBook();
 
           let reviews=false;
-          if(book){
+          if(book){   // if book exists then sort its reviews 
             reviews=  _.sortBy(book.reviews, function(review) {
                 return - review.upvote;
                 }
@@ -209,7 +219,7 @@ class ReviewList extends React.Component {
           }
 
 
-        if (reviews) {
+        if (reviews) {   // if book had reviews
               reviewDisplay =  (
                 <div >
                  <div className="row header" >
@@ -235,12 +245,12 @@ class ReviewList extends React.Component {
               </div>
               </div>
               );}
-if(book){
-  formDisplay=(
-  <div>
-  <Form book={book}  reviewHandler={this.addReview} /> 
-  </div>
-  );}
+        if(book){
+           formDisplay=(
+                <div>
+                <Form book={book}  reviewHandler={this.addReview} /> 
+                </div>
+          );}
            return (
             <div>
               {reviewDisplay}
@@ -249,8 +259,5 @@ if(book){
          );
     }
     };
-
-
-
- 
+    
     export default BookReviews;

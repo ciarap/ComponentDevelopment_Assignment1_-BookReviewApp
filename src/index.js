@@ -1,3 +1,5 @@
+// Author: Ciara Power 20072488
+
 import React from 'react';
     import ReactDOM from 'react-dom';
     import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -15,12 +17,12 @@ import React from 'react';
 
 
 
-var NavigationBar = React.createClass({
+var NavigationBar = React.createClass({  // navigation bar for top of screen 
 
   render() {
     return (
-      <Navbar className="navbar-fixed-top" >
-      <div className= "navbar-brand"> <a data-toggle="tooltip" title="Homepage" href="/"><img src="/bookIcon.png" alt="Book Icon"/> BookShelf </a></div>
+      <Navbar className="navbar-fixed-top" >    {/* nav bar stays fixed at top even when page is scrolled  */}
+      <div className= "navbar-brand"> <a data-toggle="tooltip" title="Homepage" href="/"><img src="/bookIcon.png" alt="Book Icon"/> BookShelf </a></div> {/*logo on left*/}
       <Nav  className="navbar-right ">
     <NavItem  className="navItem " href="/AllBooks">All Books</NavItem>
      <NavItem className="navItem" href="/AllReviews">All Reviews</NavItem>
@@ -37,7 +39,7 @@ var App = React.createClass({
   render() {
     return (
       <div >
-      <NavigationBar/>
+      <NavigationBar/>   // to be present regardless of what the body includes (for all pages )
       <div className="bodyText">
       {this.props.children}
       </div>
@@ -49,7 +51,7 @@ var App = React.createClass({
 
  ReactDOM.render( 
               <Router history={browserHistory} >
-                <Route path="/" component={App}>
+                <Route path="/" component={App}>   // default page route 
                 <IndexRoute component={Homepage}/>
                 <Route path ="/AllBooks" component={AllBooks}/>
                  <Route path="AllBooks/:id/:authorId/BookReviews" component={BookReviews} />

@@ -1,5 +1,6 @@
+// Author: Ciara Power 20072488
 
-class LocalBookCache {
+class LocalBookCache {    // local cache for books list
 
     constructor() {
         this.books = [] ;

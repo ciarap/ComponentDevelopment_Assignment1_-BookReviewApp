@@ -1,4 +1,6 @@
-  class BookCache {
+// Author: Ciara Power 20072488
+
+  class BookCache {  // local cache for one book object
 
         constructor() {
            this.book = null ;

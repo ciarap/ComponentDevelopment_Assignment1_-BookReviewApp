@@ -1,4 +1,6 @@
-class LocalReviewCache {
+// Author: Ciara Power 20072488 
+
+class LocalReviewCache {  // local cache for reviews list
 
     constructor() {
         this.reviews = [] ;
