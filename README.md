@@ -12,24 +12,74 @@ The JSON server hosts a json file, which contains three json arrays, books/autho
 
 The structure of the data in this app is quite simple, a Book object will have an Author ID attribute within, which corresponds to an Author object in the authors data array. Review objects all contain a Book ID - indicating which book the review is for. 
 
- . . . . . List of user features . . . . 
+ ### User features: 
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + View all books
+ + View certain book's details (including details about the author) 
+ + View certain book's reviews
+ + View all reviwes
+ + View 5 most popular books ( most votes for book )
+ + Leave review for a book
+ + Add book and its corresponding author to database 
+ + Sort all books list by Alphabetical, Newest, Author, Category, Highest Rated
+ + Sort all reviews list by Book, Username, Highest Rated
+ + Search through all books list 
+ + Vote for books
+ + Upvote reviews
+ + Delete book
+ + Delete review
+ 
 
 ## Installation requirements.
-. . . .  List of software used to develop the app . . . . . . . 
+
+### Software Used
+
+The following list of software was used to develop the app: 
 
 + ReactJS v15.3.0
 + Bootstrap 3
 + create-react-app tool
-+ etc
-+ etc 
++ Node.js 
++ React-Router
++ Babel Loader
++ React-DOM
++ JSON server
++ Lodash
++ Superagent
 
 . . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start the app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
+The following steps must be undertaken to successfully clone and run the project: 
+
+### Cloning Project : Steps
+Clone the project and direct cmd into the base folder. 
+
+Install npm, json server, create react app, bootstrap, lodash, react router, superagent  :
+
+''' 
+
+$ npm install
+$ npm install -g create-react-app
+$ npm install  bootstrap@3.3.6  --save
+$ npm install -g json-server
+$ npm install  lodash@2.4.2 --save
+$ npm install react-router@2.6.1  --save
+$ npm install  superagent@1.6.1 --save
+
+'''
+
+Run the server from the project base folder in a cmd window :
+'''
+$ json-server ./data.json
+'''
+
+In another cmd window, run the app:
+'''
+$ npm start
+'''
+
+
+
+
 
 ## Data Model Design.
 
