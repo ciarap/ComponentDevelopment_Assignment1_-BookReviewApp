@@ -4,6 +4,8 @@ Name: Ciara Power
 
 ## Overview.
 
+![][image21]
+
 This is an app created with the use of React Framework and Node.js (npm). Javascript, HTML and CSS languages are used throughout.
 
 The app itself forms a Book Review application, with the concept of having different data objects (books, authors, reviews) served on a JSON server, and for the user to be able to add reviews and books, and even read about books on the app. 
@@ -17,7 +19,7 @@ The structure of the data in this app is quite simple, a Book object will have a
  + View all books
  + View certain book's details (including details about the author) 
  + View certain book's reviews
- + View all reviwes
+ + View all reviews
  + View 5 most popular books ( most votes for book )
  + Leave review for a book
  + Add book and its corresponding author to database 
@@ -235,4 +237,5 @@ To link up reviews to book objects, I researched querying with HTTP requests. I 
 [image18]: ./views_screenshots/PopularBooks1.PNG
 [image19]: ./views_screenshots/NavBar_Hover.PNG
 [image20]: ./views_screenshots/ComponentHierarchy.png
+[image21]: ./views_screenshots/logo.PNG
 
