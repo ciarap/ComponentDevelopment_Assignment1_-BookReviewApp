@@ -17,7 +17,7 @@ The structure of the data in this app is quite simple, a Book object will have a
  + View all books
  + View certain book's details (including details about the author) 
  + View certain book's reviews
- + View all reviwes
+ + View all reviews
  + View 5 most popular books ( most votes for book )
  + Leave review for a book
  + Add book and its corresponding author to database 
