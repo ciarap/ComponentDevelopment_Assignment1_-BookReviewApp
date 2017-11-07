@@ -206,14 +206,13 @@ class ImagesSection extends React.Component{   // images section of page
                        <h1> Alternative Book Covers </h1>
                      <ImagesSection book={book}/>
                      </div>
-                    {authorDisplay}
-                   
                     </div>
                     ) ;
           }
           return (
             <div>
               {bookDisplay}
+                {authorDisplay}
             </div>
             );
       }
