@@ -105,6 +105,12 @@ Reviews
 
 ## UI Design.
 
+### Navigation Bar 
+
+When All Books option is hovered over: 
+
+![][image19]
+
 ### HomePage
 
 ![][image4]
@@ -212,5 +218,6 @@ View 1:
 [image15]: ./views_screenshots/NewBook1.PNG
 [image16]: ./views_screenshots/NewBook2.PNG
 [image17]: ./views_screenshots/NewBook3.PNG
-[image18]: ./views_screenshots/PopularBooks.PNG
+[image18]: ./views_screenshots/PopularBooks1.PNG
+[image19]: ./views_screenshots/NavBar_Hover.PNG
 
