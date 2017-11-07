@@ -85,12 +85,15 @@ Both can be accessed through an internet browser , e.g Google Chrome.
 This json server includes three entities : Books, Authors and Reviews.
 
 Books
+
 ![][image1]
 
 Authors
+
 ![][image2]
 
 Reviews
+
 ![][image3]
 
 
@@ -108,19 +111,70 @@ Reviews
 
 ### All Books
 View:
+
 ![][image5]
 
 Sorting bar:
+
 ![][image6]
 
 ### All Reviews
 
-View (first half):
+View 1:
+
 ![][image7]
-View (second half):
+
+View 2:
+
 ![][image8]
+
 Sorting bar:
+
 ![][image9]
+
+### Book Details
+
+View 1:
+
+![][image10]
+
+View 2:
+
+![][image11]
+
+View 3: 
+
+![][image12]
+
+### Book Reviews
+
+View 1:
+
+![][image13]
+
+View 2:
+
+![][image14]
+
+### New Book
+
+View 1:
+
+![][image15]
+
+View 2: 
+
+![][image16]
+
+Category Dropdown menu :
+
+![][image17]
+
+### Popular Books
+
+View 1:
+
+![][image18]
 
 
 
@@ -140,14 +194,23 @@ Sorting bar:
 . . . . . State the non-standard aspects of React (or other related technologies) that you researched and applied in this assignment . . . . .  
 
 
-[image1]: ./views_screenshots/books.png
+[image1]: ./views_screenshots/books.PNG
 [image2]: ./views_screenshots/authors.png
 [image3]: ./views_screenshots/reviews.png
 
-[image4]: ./views_screenshots/homepage.png
-[image5]: ./views_screenshots/allbooks1.png
-[image6]: ./views_screenshots/allbooks2.png
-[image7]: ./views_screenshots/allreviews1.png
-[image8]: ./views_screenshots/allreviews2.png
-[image9]: ./views_screenshots/allreviews3.png
+[image4]: ./views_screenshots/HomePage.PNG
+[image5]: ./views_screenshots/AllBooks1.PNG
+[image6]: ./views_screenshots/AllBooks2.PNG
+[image7]: ./views_screenshots/AllReviews1.PNG
+[image8]: ./views_screenshots/AllReviews2.PNG
+[image9]: ./views_screenshots/AllReviews3.PNG
+[image10]: ./views_screenshots/BookDetails1.PNG
+[image11]: ./views_screenshots/BookDetails2.PNG
+[image12]: ./views_screenshots/BookDetails3.PNG
+[image13]: ./views_screenshots/BookReviews1.PNG
+[image14]: ./views_screenshots/BookReviews2.PNG
+[image15]: ./views_screenshots/NewBook1.PNG
+[image16]: ./views_screenshots/NewBook2.PNG
+[image17]: ./views_screenshots/NewBook3.PNG
+[image18]: ./views_screenshots/PopularBooks.PNG
 
